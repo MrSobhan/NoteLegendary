@@ -8,19 +8,14 @@
 use function PHPSTORM_META\type;
 
 
-$conn = mysqli_connect("localhost", "root", null );
-// if ($conn) {
-//     $conn->set_charset("utf8");
-//     $DOCROOT = $_SERVER['DOCUMENT_ROOT'];
-//     mysqli_multi_query($conn, file_get_contents("$DOCROOT/db/db.sql"));
-//     while (mysqli_next_result($conn));
-// }
+$conn = mysqli_connect("localhost", "root", null , 'notes');
+if ($conn) {
+    $conn->set_charset("utf8");
+    $DOCROOT = $_SERVER['DOCUMENT_ROOT'];
+    mysqli_multi_query($conn, file_get_contents("$DOCROOT/db/db.sql"));
+    while (mysqli_next_result($conn));
+}
 
-// if (isset($_COOKIE["id"])) {
-//     session_start([
-//         "name" => "id"
-//     ]);
-// }
 
 //Helper Func
 
