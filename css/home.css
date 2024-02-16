@@ -1,0 +1,102 @@
+@import url(./main.css);
+
+.sec-1 {
+    background-image: url(https://s26.picofile.com/d/8458068600/cc045ccb-3b8d-438b-831a-93f44d1d91ef/wave.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.sec-card {
+    background: rgba(186, 226, 245, 0.432);
+    border: none;
+}
+
+.card-sec1 {
+    background-color: rgba(255, 255, 255, 0.884);
+    transition: all .7s;
+    padding: 15px;
+}
+
+.card-sec1:hover {
+    transform: scale(1.1);
+}
+
+.card-img-top {
+    margin-top: -60px;
+}
+
+.hr-card {
+    width: 100px;
+    height: 2px;
+}
+
+.footer {
+    background-color: rgba(186, 226, 245, 0.432);
+    padding: 20px;
+    font-size: 30px;
+}
+
+.btn-footer {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px 10px 20px 10px;
+    transition: all .3s;
+}
+
+.btn-footer:active {
+    transform: scale(.7) rotate(30deg);
+}
+
+.col-chats {
+    padding: 10px;
+    border: 5px dashed rgba(186, 226, 245, 0.432);
+    transition: all .8s;
+}
+
+.col-chats:hover {
+    transform: scale(.9);
+}
+
+#nav {
+    z-index: 99999999999999;
+}
+
+.all {
+    width: 50px;
+    height: 50px;
+    margin: 100px auto;
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    animation: loded 1.4s linear infinite;
+}
+
+.for {
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+@keyframes loded {
+    0% {
+        transform: scale(.6) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.6) rotate(182.5deg);
+    }
+
+    100% {
+        transform: scale(.6) rotate(365deg);
+    }
+}
+
+.div1 {
+    background-color: rgb(97, 97, 206);
+}
+
+.div2 {
+    background-color: blue;
+}

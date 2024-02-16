@@ -7,52 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="icon" type="png" href="https://img.lovepik.com/element/45007/0204.png_300.png">
+    <link rel="stylesheet" href="./css/login.css">
     <title>Login Notes</title>
-    <style>
-        @font-face {
-            font-family: vazir;
-            src: url(../fonts/Vazir-Regular.woff) format('woff'),
-             url(../fonts/Vazir-Regular.ttf) format('ttf'),
-             url(../fonts/Vazir-Regular.woff2) format('woff2'),
-             url(../fonts/Vazir-Regular.eot);
-        }
-        :root{
-            --color-them :rgb(193, 54, 206);
-        }
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: vazir;
-        }
-        body{
-            background-color: var(--color-them);
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container{
-            width: 350px;
-            background-color: rgba(240, 248, 255, 0.459);
-            border-radius: 10px;
-            margin-top: 100px;
-        }
-        .btn5{
-            width: 100%;
-            height: 40px;
-            background-color: var(--color-them);
-            color: aliceblue;
-            border: none;
-            border-radius: 5px;
-        }
-        .a{
-            width: 70%;
-            height: 30px;
-            background-color: rgba(240, 248, 255, 0);
-            color: black;
-            border: none;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
     <div class="container p-5 shadow">
