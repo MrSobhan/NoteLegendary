@@ -9,24 +9,25 @@ $quryGetChats = "SELECT * FROM chats";
 $chats = mysqli_query($conn, $quryGetChats);
 
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['sub-chat'])) {
+    $emailChat = valid($_POST['emailChat']);
+    $chat = valid($_POST['chat']);
 
-if (isset($_POST['sub-chat'])) {
-  $emailChat = valid($_POST['emailChat']);
-  $chat = valid($_POST['chat']);
+    if ($emailChat && $chat) {
+      $idd = get_session('id');
+      $querySetChats = "INSERT INTO `chats`(`uid`, `email`, `chat`) VALUES ('$idd','$emailChat','$chat')";
 
-  if ($emailChat && $chat) {
-    $idd = get_session('id');
-    $querySetChats = "INSERT INTO `chats`(`uid`, `email`, `chat`) VALUES ('$idd','$emailChat','$chat')";
+      $resultAllChats = mysqli_query($conn, $querySetChats);
 
-    $resultAllChats = mysqli_query($conn, $querySetChats);
-
-    if ($resultAllChats) {
-      if (get_session('login') && get_session('id')) {
-        home();
+      if ($resultAllChats) {
+        if (get_session('login') && get_session('id')) {
+          home();
+        }
       }
+    } else {
+      alertErrorInput();
     }
-  } else {
-    alertErrorInput();
   }
 }
 

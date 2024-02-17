@@ -1,5 +1,41 @@
+<?php
+
+require_once("./configurations/conn.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['submit'])) {
+        $email2 = valid($_POST['email2']);
+        $password2 = valid($_POST['password2']);
+
+        $queryGetUsers = "SELECT * FROM users";
+
+        $allUsers = mysqli_query($conn, $queryGetUsers);
+
+
+        if ($email2  && $password2) {
+            while ($user = $allUsers->fetch_assoc()) {
+                if ($email2 == $user['email'] && password_verify($password2, $user["password"])) {
+
+                    set_session('id', $user['id']);
+                    set_session('uname', $user['name']);
+                    set_session('login', true);
+                    home();
+                } else {
+                    set_session('login', false);
+                    alertErrorLogin();
+                }
+            }
+        } else {
+            alertErrorInput();
+        }
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +46,13 @@
     <link rel="stylesheet" href="./css/login.css">
     <title>Login Notes</title>
 </head>
+
 <body>
     <div class="container p-5 shadow">
         <form action="" class="form" method="post">
-        <a href="http://localhost/php/Notes/home.php" style="text-decoration: none;cursor:pointer;"><h1 class="fs-3 text-center mb-3 text-dark">Legendary Notes <i class="bi bi-pencil-square"></i></h1></a>
+            <a href=<?= home() ?> style="text-decoration: none;cursor:pointer;">
+                <h1 class="fs-3 text-center mb-3 text-dark">Legendary Notes <i class="bi bi-pencil-square"></i></h1>
+            </a>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">ايميل:</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email2">
@@ -24,74 +63,17 @@
             </div>
             <center>
                 <button class="btn5 mt-4 mb-4" name="submit" type="submit">ورود</button>
-                <a href="http://localhost/php/Notes/singup.php" style="text-decoration: none;"><div class="a"><i class="bi bi-person-circle"></i> ثبت نام</div></a>
+                <a href=<?= Locatoin('singup.php') ?> style="text-decoration: none;">
+                    <div class="a"><i class="bi bi-person-circle"></i> ثبت نام</div>
+                </a>
             </center>
         </form>
     </div>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <?php
-    function alert(){
-    ?>
-    <script>
-        Swal.fire(
-            'رمز ورود اشتباه است',
-            '',
-            'error'
-        )
-    </script>
-    <?php
-    }
-    ?>
-
-<?php
-
-session_start();
 
 
 
-if(isset($_POST['submit'])){
-    $email2 = htmlspecialchars($_POST['email2']);
-$password2 = htmlspecialchars($_POST['password2']);
+    <script src="./js/main.js"></script>
 
-
-$link = mysqli_connect('localhost:3306' , 'root' ,'' , 'notes');
-
-
-$link->set_charset('utf8');
-
-$qury = "SELECT * FROM users";
-
-$result = mysqli_query($link , $qury);
-
-
-if($email2 !='' && $password2 != ''){
-    while($row = $result->fetch_assoc()){
-        if ($email2 == $row['email']) {
-            if($password2 == $row['password']){
-                $_SESSION['login'] = 'true';
-                $_SESSION['id'] = $row['id'];
-                $_SESSION['uname']  =$row['name'];
-                header("Location:http://localhost/php/Notes/home.php");
-            }else{
-                $_SESSION['login'] = 'false';
-                alert();
-            }
-        }
-    }
-}else{
-    alert();
-}
-}
-
-
-
-?>
-
-<script>
-    $.addEventListener('contextmenu' , (event)=>{
-        event.preventDefault()
-    })
-</script>
-    
 </body>
+
 </html>

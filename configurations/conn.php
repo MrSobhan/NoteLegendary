@@ -10,7 +10,6 @@ include_once("./includes/alertCom.php");
 echo "loded...";
 
 
-
 $conn = mysqli_connect("localhost", "root", null);
 if ($conn) {
     $conn->set_charset("utf8");
