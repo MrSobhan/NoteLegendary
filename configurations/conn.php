@@ -7,7 +7,7 @@
 
 include_once("./includes/alertCom.php");
 
-echo "loded...";
+// echo "loded...";
 
 
 $conn = mysqli_connect("localhost", "root", null);
@@ -25,10 +25,18 @@ session_start();
 
 //Helper Func
 
+$rootHeaderUrl = 'http://localhost/php/NoteLegendary/';
+
 function Locatoin($url)
 {
-    $rootHeaderUrl = 'http://localhost/php/Notes/';
+    global $rootHeaderUrl;
     header("Location:" . $rootHeaderUrl . $url);
+}
+
+function href($url)
+{
+    global $rootHeaderUrl;
+    return $rootHeaderUrl . $url;
 }
 
 
@@ -53,7 +61,8 @@ function pas_hash($e)
 
 function home()
 {
-    header("Location: /");
+    global $rootHeaderUrl;
+    header("Location:" . $rootHeaderUrl . 'home.php');
 }
 
 function set_session($value, $var)
@@ -80,6 +89,7 @@ if (isset($_POST['go'])) {
 
 if (isset($_POST['exit'])) {
     set_session('login', false);
+    home();
 }
 
 // function userGetById($id, $conn)

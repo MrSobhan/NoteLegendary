@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $number = valid($_POST['phone']);
 
 
-        if ($name || $email || $pass || $number) {
+        if (!$name || !$email || !$pass || !$number) {
             alertErrorInput();
         } else {
 
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container p-5 shadow">
         <form class="form" method="post">
-            <a href=<?= home() ?> style="text-decoration: none;cursor:pointer;">
+            <a href=<?= href('home.php') ?> style="text-decoration: none;cursor:pointer;">
                 <h1 class="fs-3 text-center mb-3 text-dark">Legendary Notes <i class="bi bi-pencil-square"></i></h1>
             </a>
             <div class="mb-3">
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <center>
                 <button class="btn5 mt-4 mb-4" name="submit" type="submit">ثبت نام</button>
-                <a href=<?= Locatoin('login.php') ?> style="text-decoration: none;">
+                <a href=<?= href('login.php') ?> style="text-decoration: none;">
                     <div class="a"><i class="bi bi-person-circle"></i> ورود</div>
                 </a>
             </center>

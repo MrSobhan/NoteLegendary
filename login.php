@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($email2 == $user['email'] && password_verify($password2, $user["password"])) {
 
                     set_session('id', $user['id']);
-                    set_session('uname', $user['name']);
+                    set_session('uname', $user['username']);
                     set_session('login', true);
                     home();
                 } else {
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container p-5 shadow">
         <form action="" class="form" method="post">
-            <a href=<?= home() ?> style="text-decoration: none;cursor:pointer;">
+            <a href=<?= href('home.php') ?> style="text-decoration: none;cursor:pointer;">
                 <h1 class="fs-3 text-center mb-3 text-dark">Legendary Notes <i class="bi bi-pencil-square"></i></h1>
             </a>
             <div class="mb-3">
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <center>
                 <button class="btn5 mt-4 mb-4" name="submit" type="submit">ورود</button>
-                <a href=<?= Locatoin('singup.php') ?> style="text-decoration: none;">
+                <a href=<?= href('singup.php') ?> style="text-decoration: none;">
                     <div class="a"><i class="bi bi-person-circle"></i> ثبت نام</div>
                 </a>
             </center>
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <script src="./js/main.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 
