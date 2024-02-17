@@ -1,7 +1,7 @@
 @import url(./main.css);
 
 :root {
-    --color-them: rgb(193, 54, 206);
+    --color-them: rgb(54, 193, 206);
 }
 
 .container {

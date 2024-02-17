@@ -5,40 +5,38 @@
 // $database = "";
 // $conn = mysqli_connect( $hostname , $username , $password ); // For Host
 
+include_once("./includes/alertCom.php");
+
 echo "loded...";
 
-$conn = mysqli_connect("localhost", "root", null, 'notes');
+
+
+$conn = mysqli_connect("localhost", "root", null);
 if ($conn) {
     $conn->set_charset("utf8");
     $DOCROOT = $_SERVER['DOCUMENT_ROOT'];
     mysqli_multi_query($conn, file_get_contents("$DOCROOT/php/NoteLegendary/db/db.sql"));
     while (mysqli_next_result($conn));
-}else{
-    exit();
 }
 
 session_start();
 
-$isLogin = isset($_SESSION['login']) && $_SESSION['login'] == 'true' && $_SESSION['id'] != null;
 
 
-if (isset($_POST['go'])) {
-    if ($isLogin) {
-        header("Location:http://localhost/php/Notes/notes.php?id=" . $_SESSION['id']);
-    }
-}
-
-if (isset($_POST['exit'])) {
-    $_SESSION['login'] = 'false';
-}
 
 //Helper Func
+
+function Locatoin($url)
+{
+    $rootHeaderUrl = 'http://localhost/php/Notes/';
+    header("Location:" . $rootHeaderUrl . $url);
+}
 
 
 function valid($e)
 {
     $e = htmlspecialchars($e);
-    return trim($e);
+    return trim($e) != '' ? trim($e) : null;
 }
 
 function vd($e)
@@ -59,18 +57,31 @@ function home()
     header("Location: /");
 }
 
-function set_s($value, $var)
+function set_session($value, $var)
 {
     $_SESSION[$value]  = $var;
 }
 
 
-function get_s($value)
+function get_session($value)
 {
     return $_SESSION[$value];
 }
 
 // ! -------------------------------------------------------------
+
+$isLogin = isset($_SESSION['login']) && $_SESSION['login'] && get_session('id');
+
+
+if (isset($_POST['go'])) {
+    if ($isLogin) {
+        Locatoin("notes.php?id=" . get_session('id'));
+    }
+}
+
+if (isset($_POST['exit'])) {
+    set_session('login', false);
+}
 
 // function userGetById($id, $conn)
 // {

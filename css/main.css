@@ -1,10 +1,10 @@
 @font-face {
-    font-family: dana;
+    font-family: 'dana';
     src: url(../fonts/Dana/woff2/DanaFaNum-Medium.woff2) format('woff2')
 }
 
 @font-face {
-    font-family: moraba;
+    font-family: 'moraba';
     src: url(../fonts/Morabba/woff2/Morabba-Medium.woff2) format('woff2')
 }
 
@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: dana;
+    font-family: 'dana';
 }
 
 body {
@@ -29,5 +29,5 @@ body {
 }
 
 .moraba {
-    font-family: moraba;
+    font-family: 'moraba';
 }

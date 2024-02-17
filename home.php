@@ -3,6 +3,7 @@
 require_once("./configurations/conn.php");
 
 
+
 $quryGetChats = "SELECT * FROM chats";
 
 $chats = mysqli_query($conn, $quryGetChats);
@@ -10,21 +11,22 @@ $chats = mysqli_query($conn, $quryGetChats);
 
 
 if (isset($_POST['sub-chat'])) {
-  $emailChat = htmlspecialchars($_POST['emailChat']);
-  $chat = htmlspecialchars($_POST['chat']);
+  $emailChat = valid($_POST['emailChat']);
+  $chat = valid($_POST['chat']);
 
-  if (trim($emailChat) != '' && trim($chat) != '') {
-    $idd = $_SESSION['id'];
-    $qury = "INSERT INTO `chats`(`uid`, `email`, `chat`) VALUES ('$idd','$emailChat','$chat')";
+  if ($emailChat && $chat) {
+    $idd = get_session('id');
+    $querySetChats = "INSERT INTO `chats`(`uid`, `email`, `chat`) VALUES ('$idd','$emailChat','$chat')";
 
-    $result = mysqli_query($link, $qury);
-    if ($result) {
-      if ($_SESSION['login'] == 'true' && $_SESSION['id'] != '') {
-        header("Location:http://localhost/php/Notes/home.php");
+    $resultAllChats = mysqli_query($conn, $querySetChats);
+
+    if ($resultAllChats) {
+      if (get_session('login') && get_session('id')) {
+        home();
       }
     }
   } else {
-    echo  "<script>alert('فيلد ها را كامل كنيد')</script>";
+    alertErrorInput();
   }
 }
 
@@ -40,8 +42,8 @@ if (isset($_POST['sub-chat'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxYvmYo9rTuvkLR1C05WwbQ5u443pJrzR__kXSV7vVSAmGY_eJN_KfwxnkixbkYFOdb8&usqp=CAU">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script> -->
   <link rel="stylesheet" href="./css/home.css">
   <title>Legendary Notes</title>
 </head>
@@ -288,9 +290,12 @@ if (isset($_POST['sub-chat'])) {
       </div>
     </section>
 
-    <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+    <div style="height: 150px; overflow: hidden;">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
         <path d="M0.00,49.99 C263.82,205.76 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>
-      </svg></div>
+      </svg>
+    </div>
+
     <section data-aos="zoom-out-up">
       <div class="container-fluid sec-card" id="p3">
         <div class="row justify-content-center align-items-center">
@@ -350,9 +355,12 @@ if (isset($_POST['sub-chat'])) {
         </div>
       </div>
     </section>
-    <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+
+    <div style="height: 150px; overflow: hidden;">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
         <path d="M0.00,49.99 C191.59,193.92 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>
-      </svg></div>
+      </svg>
+    </div>
 
     <section data-aos="zoom-in">
       <div class="container mt-5 mb-3">
@@ -377,9 +385,12 @@ if (isset($_POST['sub-chat'])) {
       </div>
     </section>
 
-    <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+    <div style="height: 150px; overflow: hidden;">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
         <path d="M0.00,49.99 C263.82,205.76 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>
-      </svg></div>
+      </svg>
+    </div>
+
     <section>
       <div class="container-fluid footer">
         <div class="row align-items-center justify-content-center g-4">
@@ -401,6 +412,7 @@ if (isset($_POST['sub-chat'])) {
         <h6 class="text-center mt-5">Create by 💙 Mr.Legend 2023 &copy;</h6>
       </div>
     </section>
+
   </section>
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
