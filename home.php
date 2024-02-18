@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxYvmYo9rTuvkLR1C05WwbQ5u443pJrzR__kXSV7vVSAmGY_eJN_KfwxnkixbkYFOdb8&usqp=CAU">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxYvmYo9rTuvkLR1C05WwbQ5u443pJrzR__kXSV7vVSAmGY_eJN_KfwxnkixbkYFOdb8&usqp=CAU">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="./css/home.css">
   <title>Legendary Notes</title>
 </head>
@@ -57,68 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="div2 for"></div>
     </div>
   </section>
+  
+
 
   <section id="page01">
 
-    <? include_once('./includes/Navbar.php') ?>
-    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary shadow w-100" id="nav">
-      <div class="container">
-        <?php
-        if (!$isLogin) {
-
-        ?>
-          <div>
-            <button class="btn"><a href=<?= href('singup.php') ?> class="text-dark" style="text-decoration: none;"><i class="bi bi-pen-fill"></i> ثبت نام</a></button>
-            <button class="btn btn-primary"><a href=<?= href('login.php') ?> class="text-light" style="text-decoration: none;"><i class="bi bi-person-fill"></i> ورود</a></button>
-          </div>
-        <?php
-        } else {
-        ?>
-          <form method="post">
-            <div class="dropdown">
-              <?php
-              if (isset($_SESSION['uname'])) {
-              ?>
-                <a class="dropdown-toggle text-dark" style="text-decoration: none;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i> <?php echo $_SESSION['uname']; ?></a>
-              <?php
-              }
-              ?>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="http://localhost/php/Notes/panel-users.php?id=<?php echo $_SESSION['id']; ?>">پنل كاربري</a></li>
-                <li><button class="dropdown-item" name="go">يادداشت ها</button></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><button class="dropdown-item text-danger" name="exit">خروج</button></li>
-              </ul>
-            </div>
-          </form>
-        <?php
-        }
-        ?>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">صفحه اصلي</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#p1">ويژگي ها</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#p2">سوالات مهم</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#p3">نظرات</a>
-            </li>
-          </ul>
-        </div>
-        <a class="navbar-brand fs-6" href="#">Legendary Notes <i class="bi bi-pencil-square"></i></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav> -->
+    <?php include_once('./includes/Navbar.php');?>
 
 
     <section>
@@ -138,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
     </section>
-
+    
     <section data-aos="flip-down">
       <div class="container mt-5 mb-5" id="p1">
         <div class="row justify-content-center align-items-center g-0">

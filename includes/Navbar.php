@@ -5,8 +5,8 @@
 
         ?>
             <div>
-                <button class="btn"><a href=<?= Locatoin('singup.php') ?> class="text-dark" style="text-decoration: none;"><i class="bi bi-pen-fill"></i> ثبت نام</a></button>
-                <button class="btn btn-primary"><a href=<?= Locatoin('login.php') ?> class="text-light" style="text-decoration: none;"><i class="bi bi-person-fill"></i> ورود</a></button>
+                <button class="btn"><a href=<?= href('singup.php') ?> class="text-dark" style="text-decoration: none;"><i class="bi bi-pen-fill"></i> ثبت نام</a></button>
+                <button class="btn btn-primary"><a href=<?= href('login.php') ?> class="text-light" style="text-decoration: none;"><i class="bi bi-person-fill"></i> ورود</a></button>
             </div>
         <?php
         } else {
@@ -21,7 +21,7 @@
                     }
                     ?>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="http://localhost/php/Notes/panel-users.php?id=<?php echo $_SESSION['id']; ?>">پنل كاربري</a></li>
+                        <li><a class="dropdown-item" href="<?= href('panel-users.php?id='.get_session('id'))?>">پنل كاربري</a></li>
                         <li><button class="dropdown-item" name="go">يادداشت ها</button></li>
                         <li>
                             <hr class="dropdown-divider">
