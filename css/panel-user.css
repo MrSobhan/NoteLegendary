@@ -1,0 +1,18 @@
+@import url(./main.css);
+
+.footer {
+    background-color: rgba(186, 226, 245, 0.432);
+    padding: 20px;
+    font-size: 30px;
+}
+
+.btn-footer {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px 10px 20px 10px;
+    transition: all .3s;
+}
+
+.btn-footer:active {
+    transform: scale(.7) rotate(30deg);
+}

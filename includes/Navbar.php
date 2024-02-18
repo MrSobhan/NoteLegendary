@@ -50,7 +50,7 @@
                 </li>
             </ul>
         </div>
-        <a class="navbar-brand fs-6" href="#">Legendary Notes <i class="bi bi-pencil-square"></i></a>
+        <a class="navbar-brand fs-6" href="<?= href('home.php'); ?>">Legendary Notes <i class="bi bi-pencil-square"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

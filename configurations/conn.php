@@ -76,6 +76,10 @@ function get_session($value)
     return $_SESSION[$value];
 }
 
+function get_id_header($id) {
+    return $_GET[$id] == null ? false : $_GET[$id];
+}
+
 // ! -------------------------------------------------------------
 
 $isLogin = isset($_SESSION['login']) && $_SESSION['login'] && get_session('id');
