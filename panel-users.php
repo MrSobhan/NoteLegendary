@@ -1,21 +1,17 @@
 <?php
 
-session_start();
+require_once("./configurations/conn.php");
 
-if($_SESSION['login'] == 'false'|| isset($_SESSION['login']) == false){
-    header("Location:http://localhost/php/Notes/home.php");
+if($isLogin){
+    home();
     exit;
 }
 
-$link = mysqli_connect('localhost:3306' , 'root' ,'' , 'notes');
 
 
-$link->set_charset('utf8');
+$quryGetUsers = "SELECT * FROM users";
 
-
-$qury2 = "SELECT * FROM users";
-
-$result2 = mysqli_query($link , $qury2);
+$allUsers = mysqli_query($conn, $quryGetUsers);
 
 
 $id_top = $_GET['id'];
