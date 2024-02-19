@@ -16,6 +16,8 @@ if ($conn) {
     $DOCROOT = $_SERVER['DOCUMENT_ROOT'];
     mysqli_multi_query($conn, file_get_contents("$DOCROOT/php/NoteLegendary/db/db.sql"));
     while (mysqli_next_result($conn));
+}else{
+    exit;
 }
 
 session_start();
@@ -85,7 +87,7 @@ function get_id_header($id) {
 $isLogin = isset($_SESSION['login']) && $_SESSION['login'] && get_session('id');
 
 
-if (isset($_POST['go'])) {
+if (isset($_POST['goNotes'])) {
     if ($isLogin) {
         Locatoin("notes.php?id=" . get_session('id'));
     }

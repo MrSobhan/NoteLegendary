@@ -22,7 +22,7 @@
                     ?>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<?= href('panel-users.php?id='.get_session('id'))?>">پنل كاربري</a></li>
-                        <li><button class="dropdown-item" name="go">يادداشت ها</button></li>
+                        <li><button class="dropdown-item" name="goNotes">يادداشت ها</button></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

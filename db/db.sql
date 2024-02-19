@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS `note` (
     `uid` VARCHAR(255) NOT NULL,
     `title` VARCHAR(255) NOT NULL,
     `text` VARCHAR(1255) NOT NULL,
+    `status` VARCHAR(10) NOT NULL DEFAULT false,
     `updateAt` TIMESTAMP ,
     `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
     PRIMARY KEY (`id`)
