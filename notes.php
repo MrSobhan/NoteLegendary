@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
   if (isset($_GET['remove']) != '') {
 
-    $id_Remove = get_id_header('heart');
+    $id_Remove = get_id_header('remove');
 
     $queryRemoveNote = "DELETE FROM note WHERE `id`='$id_Remove'";
 
@@ -181,18 +181,7 @@ $countNowPage = 0;
 
     <?php
     if ($countAllNotes['count'] != '0') {
-    ?>
-      <div class="row align-items-center">
-        <div class="col-6">
-          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $countAllNotes['count'] ?></div>
-        </div>
-        <div class="col-6">
-          <form action="" method="post">
-            <button class="btn btn-danger fs-7 float-end mt-5 me-5" name="delete-all"><i class="bi bi-trash3-fill"></i> حذف همه</button>
-          </form>
-        </div>
-      </div>
-    <?php
+      counterNotes($countAllNotes['count']);
     } else {
     ?>
       <div class="alert alert-danger" role="alert">
@@ -219,18 +208,7 @@ $countNowPage = 0;
     </center>
     <?php
     if ($countLovePage != 0) {
-    ?>
-      <div class="row align-items-center">
-        <div class="col-6">
-          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $countLovePage ?></div>
-        </div>
-        <div class="col-6">
-          <form action="" method="post">
-            <button class="btn btn-danger fs-7 float-end mt-5 me-5" name="delete-all"><i class="bi bi-trash3-fill"></i> حذف همه</button>
-          </form>
-        </div>
-      </div>
-    <?php
+      counterNotes($countLovePage);
     } else {
     ?>
       <div class="alert alert-danger" role="alert">
@@ -260,18 +238,7 @@ $countNowPage = 0;
     </center>
     <?php
     if ($countNowPage != 0) {
-    ?>
-      <div class="row align-items-center">
-        <div class="col-6">
-          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $countNowPage ?></div>
-        </div>
-        <div class="col-6">
-          <form action="" method="post">
-            <button class="btn btn-danger fs-7 float-end mt-5 me-5" name="delete-all"><i class="bi bi-trash3-fill"></i> حذف همه</button>
-          </form>
-        </div>
-      </div>
-    <?php
+      counterNotes($countNowPage);
     } else {
     ?>
       <div class="alert alert-primary" role="alert">
@@ -282,7 +249,7 @@ $countNowPage = 0;
     ?>
   </div>
 
-  <!-- <div class="container mt-5" data-aos="zoom-out-up">
+  <div class="container mt-5">
     <div class="row align-items-center g-4">
       <div class="col-lg-6">
         <center><img src="https://img.freepik.com/premium-vector/programmer-working-concept-isolated-creation-development-software-programs-people-scene-flat-cartoon-design-vector-illustration-blogging-website-mobile-app-promotional-materials_9209-6543.jpg" alt="" class="img-fluid"></center>
@@ -294,7 +261,7 @@ $countNowPage = 0;
     </div>
   </div>
 
-  <section data-aos="fade-up">
+  <section>
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="col-lg-6 p-4">
@@ -337,7 +304,7 @@ $countNowPage = 0;
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
       <path d="M0.00,49.99 C263.82,205.76 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>

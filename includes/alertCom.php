@@ -39,6 +39,24 @@
     <?php
     }
     ?>
+    
+    <?php
+    function counterNotes($count)
+    {
+    ?>
+        <div class="row align-items-center">
+        <div class="col-6">
+          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $count ?></div>
+        </div>
+        <div class="col-6">
+          <form action="" method="post">
+            <button class="btn btn-danger fs-7 float-end mt-5 me-5" name="delete-all"><i class="bi bi-trash3-fill"></i> حذف همه</button>
+          </form>
+        </div>
+      </div>
+    <?php
+    }
+    ?>
 
 </body>
 
