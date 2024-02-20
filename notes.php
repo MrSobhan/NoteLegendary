@@ -31,6 +31,11 @@ if ($ID) {
 
   $allNotes = mysqli_query($conn, $queryGetAllNotes);
 
+  if (!$allNotes) {
+    # code...
+    home();
+  }
+
   $queryGetCount = "SELECT COUNT(*) as `count` FROM note";
 
   $countAllNotes = mysqli_query($conn, $queryGetCount)->fetch_assoc();
@@ -94,39 +99,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['delete-all'])) {
-    $qury5 = "DELETE FROM note WHERE uid=" . $_GET['id'];
+    $queryDeleteAllNotes = "DELETE FROM note WHERE `uid`='$ID'";
 
-    $dom5 = mysqli_query($link, $qury5);
+    $result = mysqli_query($conn, $queryDeleteAllNotes);
 
-    if ($dom5) {
-      if ($_SESSION['login'] == 'true' && $_SESSION['id'] != '') {
-        header("Location:http://localhost/php/Notes/notes.php?id=" . $_SESSION['id']);
-      }
+    if ($result) {
+      refresh();
     }
   }
 
   if (isset($_POST['delete'])) {
-    header("Location:http://localhost/php/Notes/home.php");
+    home();
   }
 
-  if (isset($_POST['sub-chat'])) {
-    $emailChat = htmlspecialchars($_POST['emailChat']);
-    $chat = htmlspecialchars($_POST['chat']);
-
-    if (trim($emailChat) != '' && trim($chat) != '') {
-      $idd = $_SESSION['id'];
-      $qury8 = "INSERT INTO `chats`(`uid`, `email`, `chat`) VALUES ('$idd','$emailChat','$chat')";
-
-      $result8 = mysqli_query($link, $qury8);
-      if ($result8) {
-        if ($_SESSION['login'] == 'true' && $_SESSION['id'] != '') {
-          header("Location:http://localhost/php/Notes/notes.php?id=" . $_SESSION['id']);
-        }
-      }
-    } else {
-      echo  "<script>alert('فيلد ها را كامل كنيد')</script>";
-    }
-  }
 }
 // $num = 0;
 $countLovePage = 0;
@@ -225,11 +210,11 @@ $countNowPage = 0;
       <div class="row g-4">
         <?php
         while ($note = $allNotes->fetch_assoc()) {
-          if (substr($note['updateAt'] , 0 , 10) == $Today) {
+          if (substr($note['updateAt'], 0, 10) == $Today) {
 
 
-          noteCard($note, $ID);
-          $countNowPage++;
+            noteCard($note, $ID);
+            $countNowPage++;
           }
         }
         ?>

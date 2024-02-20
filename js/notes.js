@@ -18,7 +18,7 @@ _id("now-tab2").addEventListener("click", () => {
   _id("love-page").hidden = true;
 });
 
-// _id("btn-them").addEventListener("click", () => {
-//   var ithem = _id("exampleColorInput").value;
-//   $.documentElement.style.setProperty("--var-them", ithem);
-// });
+_id("btn-them").addEventListener("click", () => {
+  var ithem = _id("exampleColorInput").value;
+  $.documentElement.style.setProperty("--var-them", ithem);
+});

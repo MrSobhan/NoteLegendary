@@ -16,7 +16,7 @@ if ($conn) {
     $DOCROOT = $_SERVER['DOCUMENT_ROOT'];
     mysqli_multi_query($conn, file_get_contents("$DOCROOT/php/NoteLegendary/db/db.sql"));
     while (mysqli_next_result($conn));
-}else{
+} else {
     exit;
 }
 
@@ -78,7 +78,8 @@ function get_session($value)
     return $_SESSION[$value];
 }
 
-function get_id_header($id) {
+function get_id_header($id)
+{
     return $_GET[$id] == null ? false : $_GET[$id];
 }
 
@@ -96,6 +97,28 @@ if (isset($_POST['goNotes'])) {
 if (isset($_POST['exit'])) {
     set_session('login', false);
     home();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['sub-chat'])) {
+        $emailChat = valid($_POST['emailChat']);
+        $chat = valid($_POST['chat']);
+
+        if ($emailChat && $chat) {
+            $idd = get_session('id');
+            $querySetChats = "INSERT INTO `chats`(`uid`, `email`, `chat`) VALUES ('$idd','$emailChat','$chat')";
+
+            $resultAllChats = mysqli_query($conn, $querySetChats);
+
+            if ($resultAllChats) {
+                if (get_session('login') && get_session('id')) {
+                    home();
+                }
+            }
+        } else {
+            alertErrorInput();
+        }
+    }
 }
 
 // function userGetById($id, $conn)
