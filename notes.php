@@ -1,20 +1,5 @@
 <?php
 
-// session_start();
-
-
-
-
-// if($_SESSION['login'] == 'false' || isset($_SESSION['login']) == false){
-//     header("Location:http://localhost/php/Notes/home.php");
-//     exit;
-// }
-
-// $link = mysqli_connect('localhost:3306' , 'root' ,'' , 'notes');
-
-
-// $link->set_charset('utf8');
-
 require_once("./configurations/conn.php");
 
 if (!$isLogin) {
@@ -54,9 +39,7 @@ $day_Number = strlen($getTime['mday']) != 1 ? $getTime['mday'] : '0' . $getTime[
 $Today = $getTime['year'] . '-' . $month_Number . '-' . $day_Number;
 
 
-// $result2 = mysqli_query($link, $qury);
-
-// $result3 = mysqli_query($link, $qury);
+// ? Start Actoin Query
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
@@ -113,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
 }
-// $num = 0;
+
 $countLovePage = 0;
 $countNowPage = 0;
 ?>

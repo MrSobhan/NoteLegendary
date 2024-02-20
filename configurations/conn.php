@@ -104,15 +104,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $emailChat = valid($_POST['emailChat']);
         $chat = valid($_POST['chat']);
 
+        $id_chats = uniqid();
+
         if ($emailChat && $chat) {
             $idd = get_session('id');
-            $querySetChats = "INSERT INTO `chats`(`uid`, `email`, `chat`) VALUES ('$idd','$emailChat','$chat')";
+            $querySetChats = "INSERT INTO `chats`(`id`,`uid`, `email`, `chat`) VALUES ('$id_chats','$idd','$emailChat','$chat')";
 
             $resultAllChats = mysqli_query($conn, $querySetChats);
 
             if ($resultAllChats) {
                 if (get_session('login') && get_session('id')) {
-                    home();
+                    header("Refresh:0");
                 }
             }
         } else {
