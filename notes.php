@@ -2,8 +2,8 @@
 
 // session_start();
 
-// $php =  getdate();
-// $time =  $php['month'].' '.$php['mday'].' '.$php['year'];
+
+
 
 // if($_SESSION['login'] == 'false' || isset($_SESSION['login']) == false){
 //     header("Location:http://localhost/php/Notes/home.php");
@@ -26,17 +26,27 @@ if (!$isLogin) {
 
 $ID = get_id_header('id');
 
-$queryGetAllNotes = "SELECT * FROM note WHERE `uid` = '$ID' ";
+if ($ID) {
+  $queryGetAllNotes = "SELECT * FROM note WHERE `uid` = '$ID' ";
 
-$allNotes = mysqli_query($conn, $queryGetAllNotes)->fetch_assoc();
+  $allNotes = mysqli_query($conn, $queryGetAllNotes);
 
-$queryGetCount = "SELECT COUNT(*) FROM note";
+  $queryGetCount = "SELECT COUNT(*) as `count` FROM note";
 
-$countAllNotes = mysqli_query($conn, $queryGetAllNotes)->fetch_assoc();
+  $countAllNotes = mysqli_query($conn, $queryGetCount)->fetch_assoc();
+}
 
-// vd($allNotes);
-// exit;
 
+function refresh()
+{
+  Locatoin('notes.php?id=' . get_session('id'));
+}
+
+// ? Get Time Now 
+$getTime =  getdate();
+$month_Number = strlen($getTime['mon']) != 1 ? $getTime['mon'] : '0' . $getTime['mon'];
+$day_Number = strlen($getTime['mday']) != 1 ? $getTime['mday'] : '0' . $getTime['mday'];
+$Today = $getTime['year'] . '-' . $month_Number . '-' . $day_Number;
 
 
 // $result2 = mysqli_query($link, $qury);
@@ -45,48 +55,39 @@ $countAllNotes = mysqli_query($conn, $queryGetAllNotes)->fetch_assoc();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-  if (isset($_GET['class']) != '') {
+  if (isset($_GET['remove']) != '') {
 
-    $id_remove = $_GET['class'];
-    $qury2 = "DELETE FROM note WHERE id=$id_remove";
+    $id_Remove = get_id_header('heart');
 
-    $dom = mysqli_query($link, $qury2);
+    $queryRemoveNote = "DELETE FROM note WHERE `id`='$id_Remove'";
 
-    if ($dom) {
-      if ($_SESSION['login'] == 'true' && $_SESSION['id'] != '') {
-        header("Location:http://localhost/php/Notes/notes.php?id=" . $_SESSION['id']);
-      }
+    $resultNewNote = mysqli_query($conn, $queryRemoveNote);
+
+    if ($resultNewNote) {
+      refresh();
     }
   }
 
   //hearts
 
-  if (isset($_GET['heart1']) != '') {
+  if (isset($_GET['heart']) != '') {
 
-    $id_heart1 = $_GET['heart1'];
-    $qury3 = "UPDATE `note` SET `status`='1' WHERE id=$id_heart1";
+    $id_Heart = get_id_header('heart');
+    $statusNote = 'true';
 
-    $dom3 = mysqli_query($link, $qury3);
-
-    if ($dom3) {
-      if ($_SESSION['login'] == 'true' && $_SESSION['id'] != '') {
-        header("Location:http://localhost/php/Notes/notes.php?id=" . $_SESSION['id']);
+    while ($note = $allNotes->fetch_assoc()) {
+      if ($id_Heart == $note['id']) {
+        $statusNote = ($note['status'] == 'false') ? 'true' : 'false';
       }
     }
-  }
+
+    $queryChangeStatus = "UPDATE `note` SET `status`='$statusNote' WHERE `id`='$id_Heart' ";
+
+    $resultStatus = mysqli_query($conn, $queryChangeStatus);
 
 
-  if (isset($_GET['heart0']) != '') {
-
-    $id_heart0 = $_GET['heart0'];
-    $qury4 = "UPDATE `note` SET `status`='0' WHERE id=$id_heart0";
-
-    $dom4 = mysqli_query($link, $qury4);
-
-    if ($dom4) {
-      if ($_SESSION['login'] == 'true' && $_SESSION['id'] != '') {
-        header("Location:http://localhost/php/Notes/notes.php?id=" . $_SESSION['id']);
-      }
+    if ($resultStatus) {
+      refresh();
     }
   }
 }
@@ -128,8 +129,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 // $num = 0;
-// $num1 = 0;
-// $num2 = 0;
+$countLovePage = 0;
+$countNowPage = 0;
 ?>
 
 <!DOCTYPE html>
@@ -149,6 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
   <?php include_once('./includes/Navbar.php'); ?>
+  <?php include_once('./includes/NoteCard.php'); ?>
 
   <center>
     <ul class="nav nav-pills nav-fill gap-2 p-1 small rounded-5 shadow bg-primary mt-5" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white); width:350px;">
@@ -164,48 +166,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </ul>
   </center>
 
-  <div class="container mt-5" id="note-page" data-aos="zoom-out-up">
+
+  <div class="container mt-5" id="note-page">
     <center>
       <div class="row g-4">
         <?php
-        while ($allNotes) {
-
-
-        ?>
-          <div class="col-lg-4">
-            <div class="card shadow" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title" style="color: var(--var-them);"><?= $note['title'] ?></h5>
-                <p class="card-text"><?= substr($note['text'], 0, 170) ?></p>
-                <a href="<?= href('notes.php?id=' . $ID . '&class=' . $note['id']) ?>" class="btn btn-outline-danger">حذف</a>
-                <a href="<?= href('note-update.php?id=' . $note['id']) ?>" class="btn btn-outline-primary">ويرايش</a>
-                <div class="div-card-h1"></div>
-                <div class="row mt-4 align-items-center">
-                  <div class="col-6">
-                    <h6 style="font-family: 'Kdam Thmor Pro', sans-serif; font-size: 13px;"><?= $note['time'] ?></h6>
-                  </div>
-                  <div class="col-6">
-                    <a href="<?= href('notes.php?heart=' . $note['id']) ?>"><button class="btn-heart" class="<?= !$note['status'] ? 'bg-light' : 'bg-danger' ?>"><i class="bi bi-heart-fill"></i></button></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        <?php
+        while ($note = $allNotes->fetch_assoc()) {
+          noteCard($note, $ID);
         }
-
         ?>
       </div>
     </center>
 
 
     <?php
-    if ($countAllNotes) {
+    if ($countAllNotes['count'] != '0') {
     ?>
       <div class="row align-items-center">
         <div class="col-6">
-          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $countAllNotes ?></div>
+          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $countAllNotes['count'] ?></div>
         </div>
         <div class="col-6">
           <form action="" method="post">
@@ -224,47 +203,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ?>
   </div>
 
-  <!-- <div class="container mt-5" id="love-page" hidden>
+  <div class="container mt-5" id="love-page" hidden>
     <center>
       <div class="row g-4">
         <?php
-        while ($row = $result2->fetch_assoc()) {
-          if ($_GET['id'] == $row['uid']) {
-            if ($row['status'] == 1) {
-        ?>
-              <div class="col-lg-4">
-                <div class="card shadow" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title" style="color: var(--var-them);"><?php echo $row['title'] ?></h5>
-                    <p class="card-text"><?php echo substr($row['text'], 0, 170) ?></p>
-                    <a href="http://localhost/php/Notes/notes.php?id=<?php echo $_GET['id'] ?>&class=<?php echo $row['id'] ?>" class="btn btn-outline-danger">حذف</a>
-                    <a href="http://localhost/php/Notes/notes-update.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-primary">ويرايش</a>
-                    <div class="div-card-h1"></div>
-                    <div class="row mt-4 align-items-center">
-                      <div class="col-6">
-                        <h6 style="font-family: 'Kdam Thmor Pro', sans-serif; font-size: 13px;"><?php echo $row['time'] ?></h6>
-                      </div>
-                      <div class="col-6">
-                        <a href="http://localhost/php/Notes/notes.php?heart1=<?php echo $row['id'] ?>"><button class="btn-heart" style="color: red;"><i class="bi bi-heart-fill"></i></button></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        <?php
-              $num1++;
-            }
+        while ($note = $allNotes->fetch_assoc()) {
+          if ($note['status'] == 'true') {
+
+            noteCard($note, $ID);
+            $countLovePage++;
           }
         }
         ?>
       </div>
     </center>
     <?php
-    if ($num1 != 0) {
+    if ($countLovePage != 0) {
     ?>
       <div class="row align-items-center">
         <div class="col-6">
-          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?php echo $num1 ?></div>
+          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $countLovePage ?></div>
         </div>
         <div class="col-6">
           <form action="" method="post">
@@ -285,71 +243,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <div class="container mt-5" id="now-page" hidden>
     <center>
+
       <div class="row g-4">
         <?php
-        while ($row = $result3->fetch_assoc()) {
-          if ($_GET['id'] == $row['uid']) {
-            if ($row['time'] == $time) {
-              if ($row['status'] == 0) {
-        ?>
-                <div class="col-lg-4">
-                  <div class="card shadow" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title" style="color: var(--var-them);"><?php echo $row['title'] ?></h5>
-                      <p class="card-text"><?php echo substr($row['text'], 0, 170) ?></p>
-                      <a href="http://localhost/php/Notes/notes.php?id=<?php echo $_GET['id'] ?>&class=<?php echo $row['id'] ?>" class="btn btn-outline-danger">حذف</a>
-                      <a href="http://localhost/php/Notes/notes-update.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-primary">ويرايش</a>
-                      <div class="div-card-h1"></div>
-                      <div class="row mt-4 align-items-center">
-                        <div class="col-6">
-                          <h6 style="font-family: 'Kdam Thmor Pro', sans-serif; font-size: 13px;"><?php echo $row['time'] ?></h6>
-                        </div>
-                        <div class="col-6">
-                          <a href="http://localhost/php/Notes/notes.php?heart1=<?php echo $row['id'] ?>"><button class="btn-heart" style="color: rgba(19, 19, 19, 0.192);"><i class="bi bi-heart-fill"></i></button></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <?php
-                $num2++;
-              } else if ($row['status'] == 1) {
+        while ($note = $allNotes->fetch_assoc()) {
+          if (substr($note['updateAt'] , 0 , 10) == $Today) {
 
-              ?>
-                <div class="col-lg-4">
-                  <div class="card shadow" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title" style="color: var(--var-them);"><?php echo $row['title'] ?></h5>
-                      <p class="card-text"><?php echo substr($row['text'], 0, 170) ?></p>
-                      <a href="http://localhost/php/Notes/notes.php?id=<?php echo $_GET['id'] ?>&class=<?php echo $row['id'] ?>" class="btn btn-outline-danger">حذف</a>
-                      <a href="http://localhost/php/Notes/notes-update.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-primary">ويرايش</a>
-                      <div class="div-card-h1"></div>
-                      <div class="row mt-4 align-items-center">
-                        <div class="col-6">
-                          <h6 style="font-family: 'Kdam Thmor Pro', sans-serif; font-size: 13px;"><?php echo $row['time'] ?></h6>
-                        </div>
-                        <div class="col-6">
-                          <a href="http://localhost/php/Notes/notes.php?heart1=<?php echo $row['id'] ?>"><button class="btn-heart" style="color: red;"><i class="bi bi-heart-fill"></i></button></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        <?php
-                $num2++;
-              }
-            }
+
+          noteCard($note, $ID);
+          $countNowPage++;
           }
         }
         ?>
       </div>
+
     </center>
     <?php
-    if ($num2 != 0) {
+    if ($countNowPage != 0) {
     ?>
       <div class="row align-items-center">
         <div class="col-6">
-          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?php echo $num2 ?></div>
+          <div class="badge bg-primary text-light fs-5 mt-5 ms-5"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $countNowPage ?></div>
         </div>
         <div class="col-6">
           <form action="" method="post">
@@ -368,7 +282,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ?>
   </div>
 
-  <div class="container mt-5" data-aos="zoom-out-up">
+  <!-- <div class="container mt-5" data-aos="zoom-out-up">
     <div class="row align-items-center g-4">
       <div class="col-lg-6">
         <center><img src="https://img.freepik.com/premium-vector/programmer-working-concept-isolated-creation-development-software-programs-people-scene-flat-cartoon-design-vector-illustration-blogging-website-mobile-app-promotional-materials_9209-6543.jpg" alt="" class="img-fluid"></center>
