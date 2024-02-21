@@ -19,6 +19,7 @@ if ($ID) {
   if (!$allNotes) {
     # code...
     home();
+    exit;
   }
 
   $queryGetCount = "SELECT COUNT(*) as `count` FROM note";
@@ -32,11 +33,6 @@ function refresh()
   Locatoin('notes.php?id=' . get_session('id'));
 }
 
-// ? Get Time Now 
-$getTime =  getdate();
-$month_Number = strlen($getTime['mon']) != 1 ? $getTime['mon'] : '0' . $getTime['mon'];
-$day_Number = strlen($getTime['mday']) != 1 ? $getTime['mday'] : '0' . $getTime['mday'];
-$Today = $getTime['year'] . '-' . $month_Number . '-' . $day_Number;
 
 
 // ? Start Actoin Query

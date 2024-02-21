@@ -22,7 +22,11 @@ if ($conn) {
 
 session_start();
 
-
+// ? Get Time Now 
+$getTime =  getdate();
+$month_Number = strlen($getTime['mon']) != 1 ? $getTime['mon'] : '0' . $getTime['mon'];
+$day_Number = strlen($getTime['mday']) != 1 ? $getTime['mday'] : '0' . $getTime['mday'];
+$Today = $getTime['year'] . '-' . $month_Number . '-' . $day_Number;
 
 
 //Helper Func

@@ -17,8 +17,8 @@
         <div class="col-lg-4">
             <div class="card shadow" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title" style="color: var(--var-them);"><?= $note['title'] ?></h5>
-                    <p class="card-text"><?= substr($note['text'], 0, 170) ?>...</p>
+                    <h5 class="card-title" style="color: var(--var-them);"><?= substr($note['title'], 0, 22) ?></h5>
+                    <p class="card-text"><?= substr($note['text'], 0, 100) ?>...</p>
                     <a href="<?= href('notes.php?id=' . $ID . '&remove=' . $note['id']) ?>" class="btn btn-outline-danger">حذف</a>
                     <a href="<?= href('note-update.php?id=' . $note['id']) ?>" class="btn btn-outline-primary">ويرايش</a>
                     <div class="div-card-h1"></div>
