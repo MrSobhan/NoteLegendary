@@ -11,16 +11,20 @@ if (!$isLogin) {
 
 $ID = get_id_header('id');
 
+
 if ($ID) {
   $queryGetAllNotes = "SELECT * FROM note WHERE `uid` = '$ID' ";
 
   $allNotes = mysqli_query($conn, $queryGetAllNotes);
 
+
   if (!$allNotes) {
+
     # code...
     home();
     exit;
   }
+
 
   $queryGetCount = "SELECT COUNT(*) as `count` FROM note";
 
@@ -137,6 +141,7 @@ $countNowPage = 0;
         while ($note = $allNotes->fetch_assoc()) {
           noteCard($note, $ID);
         }
+        $allNotes->data_seek(0);
         ?>
       </div>
     </center>
@@ -166,6 +171,7 @@ $countNowPage = 0;
             $countLovePage++;
           }
         }
+        $allNotes->data_seek(0);
         ?>
       </div>
     </center>
@@ -273,8 +279,8 @@ $countNowPage = 0;
 
   <?php include_once('./includes/footer.php'); ?>
 
-  <a href="<?= href('notes-add.php');?>"><button class="btn btn-add btn-primary"><i class="bi bi-pencil-square"></i></button></a>
-  <a href="<?= href('home.php');?>"><span class="badge bg-danger text-light fs-5 btn-exit"><i class="bi bi-house-fill" style="margin-right: -2px;"></i></span></a>
+  <a href="<?= href('notes-add.php'); ?>"><button class="btn btn-add btn-primary"><i class="bi bi-pencil-square"></i></button></a>
+  <a href="<?= href('home.php'); ?>"><span class="badge bg-danger text-light fs-5 btn-exit"><i class="bi bi-house-fill" style="margin-right: -2px;"></i></span></a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
