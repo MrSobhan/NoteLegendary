@@ -98,22 +98,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $countLovePage = 0;
 $countNowPage = 0;
+
+$page_type = 'notes';
+include_once("./includes/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="stylesheet" href="./css/notes.css">
-  <title>Hello / <?= get_session('uname') ?></title>
-</head>
 
 <body>
   <?php include_once('./includes/Navbar.php'); ?>

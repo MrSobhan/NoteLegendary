@@ -35,26 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Locatoin('notes.php?id='. get_session('id'));
     }
 }
+$page_type = 'notes';
+include_once("./includes/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href="https://cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- TinyMCE -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js">
-    </script>
-    <link rel="stylesheet" href="./css/notes.css">
-    <script src="./js/main.js" defer></script>
-    <title>ذخيره متن</title>
-</head>
 
 <body>
     <h1 class="text-primary text-center mt-4"><i class="bi bi-chat-left-text"></i> ايجاد يادداشت</h1>
@@ -78,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <?php include_once('./includes/footer.php'); ?>
-
+    <script src="./js/main.js"></script>
 
 </body>
 

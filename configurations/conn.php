@@ -6,9 +6,17 @@
 // $conn = mysqli_connect( $hostname , $username , $password ); // For Host
 
 include_once("./includes/alertCom.php");
-
+// include_once("router.php");
+// $title_header = null;
+// $url_title = null;
+// if($url_title == 'home'){
+//     $title_header = 'Legendary Notes';
+// }elseif ($url_title == 'notes') {
+//     $title_header = 'Hello /' . get_session('uname');
+// }
 // echo "loded...";
 
+$page_type =  'home';
 
 $conn = mysqli_connect("localhost", "root", null);
 if ($conn) {
@@ -21,6 +29,8 @@ if ($conn) {
 }
 
 session_start();
+
+
 
 // ? Get Time Now 
 $getTime =  getdate();

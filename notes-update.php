@@ -45,24 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Locatoin('notes.php?id=' . get_session('id'));
     }
 }
+
+$page_type = 'notes';
+include_once("./includes/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <!-- TinyMCE -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js">
-    </script>
-    <link rel="stylesheet" href="./css/notes.css">
-    <script src="./js/main.js" defer></script>
-    <title>ذخيره متن</title>
-</head>
 
 <body>
     <h1 class="text-primary text-center mt-4"><i class="bi bi-chat-left-text"></i> ويرايش يادداشت</h1>
@@ -97,6 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         </form>
     </div>
+
+    <script src="./js/main.js"></script>
 
 </body>
 
