@@ -2,8 +2,6 @@
 
 require_once("./configurations/conn.php");
 
-
-
 $quryGetChats = "SELECT * FROM chats";
 
 $chats = mysqli_query($conn, $quryGetChats);
