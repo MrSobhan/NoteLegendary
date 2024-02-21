@@ -9,10 +9,6 @@ if (!$isLogin) {
 
 $id_user = get_session('id');
 
-function noteBackPage(){
-    global $id_user;
-    Locatoin('notes.php?id='. $id_user);
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -28,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $result = mysqli_query($conn, $queryAddNotes);
             if ($result) {
-                noteBackPage();
+                Locatoin('notes.php?id='. get_session('id'));
             }
         }else{
             alertErrorInput();
@@ -36,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST['noteBack'])) {
-        noteBackPage();
+        Locatoin('notes.php?id='. get_session('id'));
     }
 }
 ?>

@@ -20,7 +20,7 @@
                     <h5 class="card-title" style="color: var(--var-them);"><?= substr($note['title'], 0, 22) ?></h5>
                     <p class="card-text"><?= substr($note['text'], 0, 100) ?>...</p>
                     <a href="<?= href('notes.php?id=' . $ID . '&remove=' . $note['id']) ?>" class="btn btn-outline-danger">حذف</a>
-                    <a href="<?= href('note-update.php?id=' . $note['id']) ?>" class="btn btn-outline-primary">ويرايش</a>
+                    <a href="<?= href('notes-update.php?id=' . $note['id']) ?>" class="btn btn-outline-primary">ويرايش</a>
                     <div class="div-card-h1"></div>
                     <div class="row mt-4 align-items-center">
                         <div class="col-6">
