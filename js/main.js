@@ -28,4 +28,19 @@ _qs('.nav-open').addEventListener('click', ()=>{
   }
 })
 
+
+_qs('#user-menu-button').addEventListener('click', ()=>{
+  console.log("ggog");
+  let status = _qs('.dropdown-profile').getAttribute('open')
+
+
+  if(status == 'false'){
+    _qs('.dropdown-profile').classList.remove('hidden')
+    _qs('.dropdown-profile').setAttribute('open' , 'true')
+  }else{
+    _qs('.dropdown-profile').classList.add('hidden')
+    _qs('.dropdown-profile').setAttribute('open' , 'false')
+  }
+})
+
 console.log("Hello World :))");

@@ -57,7 +57,7 @@
   </div>
 </nav> -->
 <nav>
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+  <div class="relative z-10 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
 
 
@@ -109,7 +109,7 @@
       ?>
 
         <div class="absolute inset-y-0 right-0 flex items-center pl-2 sm:static sm:inset-auto sm:mr-6 sm:pr-0">
-          <button type="button" class="relative rounded-full me-3 p-1 text-gray-900 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-800 focus:ring-offset-2 focus:ring-offset-indigo-800">
+          <button type="button" class="relative rounded-full me-3 p-1 text-gray-900 shadow-lg focus:outline-none focus:ring-1 focus:ring-indigo-800 focus:ring-offset-2 focus:ring-offset-indigo-800">
             <span class="absolute -inset-1.5"></span>
             <span class="sr-only">View notifications</span>
             <svg class="h-6 w-6 stroke-indigo-800" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -120,7 +120,7 @@
           <!-- Profile dropdown -->
           <div class="relative ml-3">
             <div>
-              <button type="button" class="relative flex rounded-full shadow-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-800 focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <button type="button" class="relative flex rounded-full shadow-lg text-sm focus:outline-none focus:ring-1 focus:ring-indigo-800 focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                 <span class="absolute -inset-1.5"></span>
                 <span class="sr-only">Open user menu</span>
                 <img class="h-8 w-8 rounded-full" src="https://cdn3d.iconscout.com/3d/premium/thumb/user-6332708-5209354.png?f=webp" alt="">
@@ -137,11 +137,14 @@
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           -->
-            <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            <div class="absolute sm:left-48 md:left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden dropdown-profile" open="false" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
               <!-- Active: "bg-gray-100", Not Active: "" -->
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+              <a href="<?= href('panel-users.php?id=' . get_session('id')) ?>" class="block px-4 py-2 text-sm text-indigo-900 hover:bg-indigo-100" role="menuitem" tabindex="-1" id="user-menu-item-0"><i class="bi bi-person text-base"></i> پروفایل</a>
+              <a href="<?= href('notes.php?id=' . get_session('id')) ?>" class="block px-4 py-2 text-sm text-indigo-900 hover:bg-indigo-100" role="menuitem" tabindex="-1" id="user-menu-item-1"><i class="bi bi-journal"></i> یادداشت ها</a>
+              <a href="#" class="block px-4 py-2 text-sm text-indigo-900 hover:bg-indigo-100" role="menuitem" tabindex="-1" id="user-menu-item-1"><i class="bi bi-bell"></i> اعلان ها</a>
+              <form action="" method="post">
+                <button type="submit" name="exit" class="block px-4 py-2 text-sm text-red-700" role="menuitem" tabindex="-1" id="user-menu-item-2"><i class="bi bi-box-arrow-right"></i> خروج</button>
+              </form>
             </div>
           </div>
         </div>
