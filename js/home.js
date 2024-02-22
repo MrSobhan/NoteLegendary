@@ -32,3 +32,4 @@ typewriter
 
 
 AOS.init();
+
