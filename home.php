@@ -58,7 +58,7 @@ include_once("./includes/header.php");
           <div class="text-center">
             <h1 id="app" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl moraba">یادداشت افسانه ای</h1>
             <p class="my-6 text-lg leading-8 text-gray-600">يادداشت هاي زيبا و محيطي امن با قابليت هاي فراوان!</p>
-            <a href="#" class="rounded-lg bg-indigo-600 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">بزن بريم!</a>
+            <a href="#" class="rounded-lg px-8 py-3 text-md font-semibold text-zinc-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><i class="bi bi-arrow-down-circle me-2"></i> بزن بريم!</a>
           </div>
         </div>
         <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">

@@ -18,13 +18,15 @@
 body {
     overflow-x: hidden !important;
 }
-
+:root{
+    --them-color : #ba68c8;
+}
 ::-webkit-scrollbar {
     width: 13px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(0, 255, 110);
+    background-color: var(--them-color);
     border-radius: 10px;
 }
 

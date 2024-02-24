@@ -4,9 +4,9 @@
         <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
         <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
         <div class="mx-auto max-w-2xl lg:max-w-4xl mt-28">
-            <h1 class="moraba text-center">صفحه مورد نظر شما پیدا نشد🥲</h1>
+            <h1 class="moraba text-center text-4xl">صفحه مورد نظر شما پیدا نشد <img class="w-auto h-9 inline" src="https://github.com/Tarikul-Islam-Anik/tarikul-islam-anik/raw/main/assets/images/Confused%20Face.png" alt="" ></h1>
             <figure class="mt-10">
-                <blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                <blockquote class="text-center text-md font-semibold leading-8 text-gray-600 sm:leading-9">
                     <p>آدرس مورد نظر شما نادرست است لطفا به صفحه اصلی رفته و مجددا تلاش کنید.</p>
                 </blockquote>
                 <figcaption class="mt-10">
