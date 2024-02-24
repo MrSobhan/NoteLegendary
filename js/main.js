@@ -30,7 +30,6 @@ _qs('.nav-open').addEventListener('click', ()=>{
 
 
 _qs('#user-menu-button').addEventListener('click', ()=>{
-  console.log("ggog");
   let status = _qs('.dropdown-profile').getAttribute('open')
 
 
