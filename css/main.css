@@ -33,3 +33,9 @@ body {
 .moraba {
     font-family: 'moraba';
 }
+
+.flex__center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -298,9 +298,9 @@ include_once("./includes/header.php");
 
     </section>
 
-    
 
-    
+
+
 
     <!-- سوالات متداول  -->
 
@@ -418,9 +418,15 @@ include_once("./includes/header.php");
 
 
     <section data-aos="zoom-out-up">
-      <div class="container-fluid sec-card" id="p3">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-lg-6 p-4">
+      <div class="relative mx-auto max-w-7xl px-6 lg:px-8" id="p3">
+        <div class="absolute inset-x-0 top-20 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+          <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-12">
+          <div class="sm:p-0 md:p-16">
+            <img src="./images/features/Taking notes-amico.png" alt="Not Dwon">
+          </div>
+          <div class="flex__center">
             <?php
             if (!$isLogin) {
             ?>
@@ -432,46 +438,25 @@ include_once("./includes/header.php");
             <?php
             } else {
             ?>
-              <form action="" class="form" method="post">
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">ايميل:</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="emailChat">
+
+
+              <form action="" class="form w-full" method="post">
+                <div class="mb-6">
+                  <label for="email" class="block mb-2 text-sm font-medium text-indigo-800">ایمیل : </label>
+                  <input type="email" name="emailChat" id="email" class="bg-gray-50 border border-indigo-300 text-indigo-800 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="sobhan.dev@company.com" />
                 </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">توضيحات:</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="chat"></textarea>
+                <div class="mb-6">
+                  <label for="first_name" class="block mb-2 text-sm font-medium text-indigo-800">نظرات : </label>
+                  <textarea type="text" name="chat" id="first_name" class="bg-gray-50 border border-indigo-300 text-indigo-800 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="پیشنهاد من ..."></textarea>
                 </div>
-                <button class="btn btn-lg btn-outline-primary" name="sub-chat">ارسال <i class="bi bi-send-fill"></i></button>
+
+                <button type="submit" name="sub-chat" class="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-7 py-2.5 text-center">ارسال</button>
               </form>
+
+
             <?php
             }
             ?>
-          </div>
-          <div class="col-lg-6">
-            <img src="https://img.freepik.com/free-vector/programmer-concept-illustration_114360-2417.jpg" alt="Not Dwon" class="img-fluid w-100" style="border-radius: 20px; height: 400px;">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <center>
-                  <div class="card shadow bg-light mt-4" style="width: 16rem;">
-                    <div class="card-body" style="border: none;">
-                      <h5 class="card-title text-primary"><i class="bi bi-telephone-fill"></i> تماس با ما</h5>
-                      <p class="card-text text-muted">98-92223111258+</p>
-                    </div>
-                  </div>
-                </center>
-              </div>
-              <div class="col-lg-6">
-                <center>
-                  <div class="card shadow bg-light mt-4" style="width: 18rem;">
-                    <div class="card-body" style="border: none;">
-                      <h5 class="card-title text-primary"><i class="bi bi-envelope-fill"></i> ايميل</h5>
-                      <p class="card-text text-muted">sobhanmosazadeh85@yahoo.com</p>
-                    </div>
-                  </div>
-                </center>
-              </div>
-
-            </div>
           </div>
         </div>
       </div>
