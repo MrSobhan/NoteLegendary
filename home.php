@@ -29,6 +29,7 @@ include_once("./includes/header.php");
 
     <?php include_once('./includes/Navbar.php'); ?>
 
+    <!-- صفحه اصلی -->
 
     <section class="hidden">
       <div class="container-fluid sec-1" style="margin-top: 100px;margin-bottom:150px;">
@@ -86,7 +87,7 @@ include_once("./includes/header.php");
     </section>
 
 
-    <!-- Content  -->
+    <!-- چی شد که ما امدیم؟-->
 
     <section data-aos="flip-down" class="hidden">
       <div class="container mt-5 mb-5" id="p1">
@@ -150,7 +151,7 @@ include_once("./includes/header.php");
 
     </section>
 
-    <!-- Content  -->
+    <!-- ویژگی ها  -->
 
     <div data-aos="zoom-in" class="hidden">
       <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
@@ -198,6 +199,43 @@ include_once("./includes/header.php");
           <path d="M0.00,49.99 C191.59,193.92 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>
         </svg></div>
     </div>
+
+    <section data-aos="zoom-in-up" class="hidden">
+      <div class="container mt-5">
+        <center>
+          <div class="row g-4">
+            <div class="col-lg-4">
+
+              <div class="card shadow sec-card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-center"><i class="bi bi-check2-square"></i> امنيت قوي</h5>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4">
+
+              <div class="card shadow sec-card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-center"><i class="bi bi-clipboard2-data"></i> دسترسي آسان</h5>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4">
+
+              <div class="card shadow sec-card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-center"><i class="bi bi-alarm-fill"></i> نامحدود و رايگان</h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </center>
+      </div>
+    </section>
+
 
     <section>
       <div class="bg-white py-24 sm:py-32">
@@ -260,41 +298,64 @@ include_once("./includes/header.php");
 
     </section>
 
-    <!-- Content  -->
+    
 
-    <section data-aos="zoom-in-up" class="hidden">
-      <div class="container mt-5">
-        <center>
-          <div class="row g-4">
-            <div class="col-lg-4">
+    
 
-              <div class="card shadow sec-card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center"><i class="bi bi-check2-square"></i> امنيت قوي</h5>
-                </div>
+    <!-- سوالات متداول  -->
+
+    <section data-aos="zoom-in-down" class="hidden">
+      <div class="container mt-5 p-5" id="p2">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                هدف از خلق اين وبسايت چه بود؟
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body px-5">
+                ما توانستيم بعد از سال ها تلاش كوشش وبا تشخيص نياز برخي مردم يك وبسايتي را براي شما عزيزان به نمايش بگذاريم كه نيازي حقيقي شما را برطرف كند و بتواند راه كار خوبي براي استفاده نكردن از كاغذ و دسترسي راحت تر نسبت به آن باشد تا مردم بتوانند با خيال راحت تر و به صورت كاملا رايگان نوشته ها و يادداشت هاي خود را بنويسند و از اين وبسايت استفاده كنند.
               </div>
-
-            </div>
-            <div class="col-lg-4">
-
-              <div class="card shadow sec-card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center"><i class="bi bi-clipboard2-data"></i> دسترسي آسان</h5>
-                </div>
-              </div>
-
-            </div>
-            <div class="col-lg-4">
-
-              <div class="card shadow sec-card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center"><i class="bi bi-alarm-fill"></i> نامحدود و رايگان</h5>
-                </div>
-              </div>
-
             </div>
           </div>
-        </center>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                آيا نوشته هاي ما از امنيت كامل برخوردار است؟
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body px-5">
+                براي پاسخ به اين سوال بايد بگوييم بله! اين وبسايت با بهره گيري كامل و دقيق از تكنولوژي روز دنيا در صنعت برنامه نويسي توانسته اعتماد تعداد زيادي از كاربران خود را جلب كند و هدف اصلي يادداشت افسانه اي بالا بردن امنيت اطلاعات و يادداشت هاي كاربرانش بوده و خواهد بود همچنين در اين راستا تلاش هاي بسيار زيادي نموده .
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                اين وبسايت چه برتري نسبت به رقبا دارد؟
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+              <div class="accordion-body px-5">
+                اين وبسايت با وجود امنيت كامل طبق هدفش و همچنين دسترسي كامل و رايگان در تمامي ساعات شبانه روز و مجهز بودن به اديتور نوشته توانسته اعتماد بيشتر كاربرانش را جلب كند.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse" aria-expanded="false" aria-controls="panelsStayOpen-collapse">
+                آيا امكان ارتباط با سازندگان سايت وجود دارد؟
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapse" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading">
+              <div class="accordion-body px-5">
+                شما در اين وبسايت با وجود امكانات زياد ميتوانيد پس از ورود در آن نظرات و مشكلات خود را با ما مطرح كنيد همچنين با وجود راه هاي ارتباطي نيز ميتوانيد با ما در ارتباط باشيد منتظر نظرات شما عزيزان هستيم!
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -353,71 +414,8 @@ include_once("./includes/header.php");
       </div>
     </section>
 
+    <!-- نظرات  -->
 
-
-
-    <!-- Content  -->
-
-    <section data-aos="zoom-in-down" class="hidden">
-      <div class="container mt-5 p-5" id="p2">
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                هدف از خلق اين وبسايت چه بود؟
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-              <div class="accordion-body px-5">
-                ما توانستيم بعد از سال ها تلاش كوشش وبا تشخيص نياز برخي مردم يك وبسايتي را براي شما عزيزان به نمايش بگذاريم كه نيازي حقيقي شما را برطرف كند و بتواند راه كار خوبي براي استفاده نكردن از كاغذ و دسترسي راحت تر نسبت به آن باشد تا مردم بتوانند با خيال راحت تر و به صورت كاملا رايگان نوشته ها و يادداشت هاي خود را بنويسند و از اين وبسايت استفاده كنند.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                آيا نوشته هاي ما از امنيت كامل برخوردار است؟
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-              <div class="accordion-body px-5">
-                براي پاسخ به اين سوال بايد بگوييم بله! اين وبسايت با بهره گيري كامل و دقيق از تكنولوژي روز دنيا در صنعت برنامه نويسي توانسته اعتماد تعداد زيادي از كاربران خود را جلب كند و هدف اصلي يادداشت افسانه اي بالا بردن امنيت اطلاعات و يادداشت هاي كاربرانش بوده و خواهد بود همچنين در اين راستا تلاش هاي بسيار زيادي نموده .
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                اين وبسايت چه برتري نسبت به رقبا دارد؟
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-              <div class="accordion-body px-5">
-                اين وبسايت با وجود امنيت كامل طبق هدفش و همچنين دسترسي كامل و رايگان در تمامي ساعات شبانه روز و مجهز بودن به اديتور نوشته توانسته اعتماد بيشتر كاربرانش را جلب كند.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-heading">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse" aria-expanded="false" aria-controls="panelsStayOpen-collapse">
-                آيا امكان ارتباط با سازندگان سايت وجود دارد؟
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapse" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading">
-              <div class="accordion-body px-5">
-                شما در اين وبسايت با وجود امكانات زياد ميتوانيد پس از ورود در آن نظرات و مشكلات خود را با ما مطرح كنيد همچنين با وجود راه هاي ارتباطي نيز ميتوانيد با ما در ارتباط باشيد منتظر نظرات شما عزيزان هستيم!
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div style="height: 150px; overflow: hidden;">
-      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-        <path d="M0.00,49.99 C263.82,205.76 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>
-      </svg>
-    </div>
 
     <section data-aos="zoom-out-up">
       <div class="container-fluid sec-card" id="p3">
@@ -479,13 +477,8 @@ include_once("./includes/header.php");
       </div>
     </section>
 
-    <div style="height: 150px; overflow: hidden;">
-      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-        <path d="M0.00,49.99 C191.59,193.92 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>
-      </svg>
-    </div>
 
-    <section data-aos="zoom-in">
+    <!-- <section data-aos="zoom-in">
       <div class="container mt-5 mb-3">
         <div class="row g-4">
           <?php
@@ -506,7 +499,7 @@ include_once("./includes/header.php");
           ?>
         </div>
       </div>
-    </section>
+    </section> -->
 
 
     <?php include_once('./includes/footer.php'); ?>
