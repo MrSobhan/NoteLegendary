@@ -88,7 +88,7 @@
 
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center me-6">
-        <a href="./home.php"><img class="h-8 w-auto" src="../images/NoteLegendary.png" alt="Your Company"></a>
+        <a href="./home.php"><img class="h-10 w-auto" src="./images/NoteLegendary.png" alt="Your Company"></a>
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
@@ -153,7 +153,7 @@
       } else {
       ?>
         <a href=<?= href('login.php') ?>>
-          <button type="button" class="h-[45px] my-auto absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:mr-6 flex items-center justify-center rounded-lg border border-transparent bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-600 hover:shadow focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:ring-offset-2">ورود / ثبت نام</button>
+          <button type="button" class="h-[45px] my-auto absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:mr-6 flex items-center justify-center rounded-lg border border-transparent md:bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-600 hover:shadow focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:ring-offset-2">ورود / عضویت</button>
         </a>
 
 
