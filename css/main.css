@@ -39,3 +39,23 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+
+.card:hover{
+    transition: all .5s;
+    transform: translateY(-10px);
+}
+
+
+.text__header::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: var(--them-color);
+    border-radius: 5px;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}

@@ -3,9 +3,11 @@
 require_once("./configurations/conn.php");
 
 
-$quryGetChats = "SELECT * FROM chats";
+$quryGetChats = "SELECT * FROM `chats`";
 
 $chats = mysqli_query($conn, $quryGetChats);
+
+// vd($chats['status']);
 
 $page_type = 'home';
 include_once("./includes/header.php");
@@ -66,7 +68,7 @@ include_once("./includes/header.php");
           <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
         </div>
       </div>
-      <div class="bg-white py-6">
+      <div class="bg-white">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
             <div class="mx-auto flex max-w-xs flex-col gap-y-4">
@@ -89,6 +91,8 @@ include_once("./includes/header.php");
 
     <!-- چی شد که ما امدیم؟-->
 
+
+
     <section data-aos="flip-down" class="hidden">
       <div class="container mt-5 mb-5" id="p1">
         <div class="row justify-content-center align-items-center g-0">
@@ -104,7 +108,8 @@ include_once("./includes/header.php");
     </section>
 
     <section>
-      <div class="overflow-hidden bg-white py-24 sm:py-32">
+      <div class="overflow-hidden bg-white pt-24 sm:pt-32">
+        <h1 class="text-3xl text-indigo-900 mb-10 moraba text__header relative max-w-max mx-auto z-1">چی شد که ما امدیم؟</h1>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div class="lg:pr-8 lg:pt-4">
@@ -238,7 +243,8 @@ include_once("./includes/header.php");
 
 
     <section>
-      <div class="bg-white py-24 sm:py-32">
+      <div class="bg-white py-16 sm:py-32">
+        <h1 class="text-3xl text-indigo-900 mb-10 moraba text__header relative max-w-max mx-auto z-1"> ویژگی ها</h1>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-2xl lg:text-center">
             <h2 class="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
@@ -362,7 +368,7 @@ include_once("./includes/header.php");
 
 
     <section class="mx-auto max-w-7xl px-6 lg:px-8">
-
+      <h1 class="text-3xl text-indigo-900 mb-12 moraba text__header relative max-w-max mx-auto z-1">سوالات متداول </h1>
       <div id="accordion-collapse" data-accordion="collapse">
         <h2 id="accordion-collapse-heading-1">
           <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-indigo-800 border border-indigo-200 rounded-xl mb-3 focus:ring-4 focus:ring-indigo-200 hover:bg-indigo-100 gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
@@ -417,11 +423,12 @@ include_once("./includes/header.php");
     <!-- نظرات  -->
 
 
-    <section data-aos="zoom-out-up">
+    <section>
       <div class="relative mx-auto max-w-7xl px-6 lg:px-8" id="p3">
         <div class="absolute inset-x-0 top-20 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
           <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
         </div>
+        <h1 class="text-3xl text-indigo-900 my-10 moraba text__header relative max-w-max mx-auto z-1">نظرات و پیشنهادات</h1>
         <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-12">
           <div class="sm:p-0 md:p-16">
             <img src="./images/features/Taking notes-amico.png" alt="Not Dwon">
@@ -462,29 +469,29 @@ include_once("./includes/header.php");
       </div>
     </section>
 
-
-    <!-- <section data-aos="zoom-in">
-      <div class="container mt-5 mb-3">
-        <div class="row g-4">
+    <section class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h1 class="text-3xl text-indigo-900 my-12 moraba text__header relative max-w-max mx-auto z-1">نظرات کاربران</h1>
+      <div class="mt-5 mb-3">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 gap-4">
           <?php
-          while ($rowChat = $chats->fetch_assoc()) {
-            if ($rowChat['status'] == 1) {
+          while ($rowChats = $chats->fetch_assoc()) {
+            if ($rowChats['status'] == '1') {
           ?>
-              <div class="col-12">
-                <div class="card col-chats w-100 shadow">
-                  <div class="card-body">
-                    <h5 class="card-title text-primary"><i class="bi bi-person-circle"></i> <?php echo $rowChat['email']; ?></h5>
-                    <p class="card-text text-muted mt-3"><?php echo $rowChat['chat']; ?></p>
-                  </div>
-                </div>
-              </div>
+              <a href="#" class="card block max-w-sm p-6 bg-gray-100 rounded-lg shadow">
+
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-indigo-800"><i class="bi bi-person-circle text-xl"></i> <?= $rowChats['email']; ?></h5>
+                <p class="font-normal text-indigo-900"><?= $rowChats['chat']; ?></p>
+                <p class="font-normal text-indigo-900 text-xs text-end mt-4">تاریخ : <?= $rowChats['createdAt']; ?></p>
+              </a>
           <?php
             }
           }
           ?>
         </div>
       </div>
-    </section> -->
+
+    </section>
+
 
 
     <?php include_once('./includes/footer.php'); ?>

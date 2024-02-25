@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   if (isset($_GET['deletechats']) != null) {
 
     $id_remove = get_id_header('deletechats');
-    $queryRemoveChats = "DELETE FROM chats WHERE id=$id_remove";
+    $queryRemoveChats = "DELETE FROM chats WHERE `id`='$id_remove'";
 
     $resultRemoveChats = mysqli_query($conn, $queryRemoveChats);
 
