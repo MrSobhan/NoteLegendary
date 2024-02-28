@@ -6,9 +6,13 @@ const $ = document,
 //     event.preventDefault()
 // })
 
-ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
-  console.error(error);
-});
+
+if(_qs("#editor")){
+
+  ClassicEditor.create(_qs("#editor")).catch((error) => {
+    console.error(error);
+  });
+}
 
 
 _qs('.nav-open').addEventListener('click', ()=>{
@@ -28,18 +32,33 @@ _qs('.nav-open').addEventListener('click', ()=>{
   }
 })
 
+if(_qs('#user-menu-button')){
+  _qs('#user-menu-button').addEventListener('click', ()=>{
+    let status = _qs('.dropdown-profile').getAttribute('open')
+  
+  
+    if(status == 'false'){
+      _qs('.dropdown-profile').classList.remove('hidden')
+      _qs('.dropdown-profile').setAttribute('open' , 'true')
+    }else{
+      _qs('.dropdown-profile').classList.add('hidden')
+      _qs('.dropdown-profile').setAttribute('open' , 'false')
+    }
+  })
+}
 
-_qs('#user-menu-button').addEventListener('click', ()=>{
-  let status = _qs('.dropdown-profile').getAttribute('open')
+// setInterval(() => {
+//   if ($.documentElement.scrollTop <= 12) {
+//     $.getElementById("nav").style.position = "relative";
+//   } else {
+//     $.getElementById("nav").style.position = "fixed";
+//     $.getElementById("nav").style.top = "0px";
+//   }
+// });
 
-
-  if(status == 'false'){
-    _qs('.dropdown-profile').classList.remove('hidden')
-    _qs('.dropdown-profile').setAttribute('open' , 'true')
-  }else{
-    _qs('.dropdown-profile').classList.add('hidden')
-    _qs('.dropdown-profile').setAttribute('open' , 'false')
-  }
-})
+// $.addEventListener("DOMContentLoaded", () => {
+//   $.getElementById("page00").hidden = true;
+//   $.getElementById("page01").hidden = false;
+// });
 
 console.log("Hello World :))");

@@ -16,20 +16,28 @@ typewriter
   .pauseFor(1000)
   .start();
 
-// setInterval(() => {
-//   if ($.documentElement.scrollTop <= 12) {
-//     $.getElementById("nav").style.position = "relative";
-//   } else {
-//     $.getElementById("nav").style.position = "fixed";
-//     $.getElementById("nav").style.top = "0px";
-//   }
-// });
 
-// $.addEventListener("DOMContentLoaded", () => {
-//   $.getElementById("page00").hidden = true;
-//   $.getElementById("page01").hidden = false;
-// });
+_id("accordion-collapse-heading-1").addEventListener("click", () => {
+  if (_id("accordion-collapse-body-1").className.includes("hidden")) {
+    _id("accordion-collapse-body-1").classList.remove("hidden");
+  } else {
+    _id("accordion-collapse-body-1").classList.add("hidden");
+  }
+});
+_id("accordion-collapse-heading-2").addEventListener("click", () => {
+  if (_id("accordion-collapse-body-2").className.includes("hidden")) {
+    _id("accordion-collapse-body-2").classList.remove("hidden");
+  } else {
+    _id("accordion-collapse-body-2").classList.add("hidden");
+  }
+});
+_id("accordion-collapse-heading-3").addEventListener("click", () => {
+  if (_id("accordion-collapse-body-3").className.includes("hidden")) {
+    _id("accordion-collapse-body-3").classList.remove("hidden");
+  } else {
+    _id("accordion-collapse-body-3").classList.add("hidden");
+  }
+});
 
 
 AOS.init();
-
