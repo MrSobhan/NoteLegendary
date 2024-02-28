@@ -47,18 +47,20 @@ if(_qs('#user-menu-button')){
   })
 }
 
-// setInterval(() => {
-//   if ($.documentElement.scrollTop <= 12) {
-//     $.getElementById("nav").style.position = "relative";
-//   } else {
-//     $.getElementById("nav").style.position = "fixed";
-//     $.getElementById("nav").style.top = "0px";
-//   }
-// });
+$.addEventListener('scroll' , () => {
+  if ($.documentElement.scrollTop <= 8) {
+   _id("navbar").style.position = "relative";
+   _id("navbar").classList.remove('bg-white')
+   _id("navbar").classList.remove('shadow')
+   _qs('.btnTop').classList.add('hidden')
+  } else {
+    _id("navbar").style.position = "fixed";
+    _id("navbar").style.top = "0px";
+    _id("navbar").classList.add('bg-white')
+    _id("navbar").classList.add('shadow')
+    _qs('.btnTop').classList.remove('hidden')
+  }
+})
 
-// $.addEventListener("DOMContentLoaded", () => {
-//   $.getElementById("page00").hidden = true;
-//   $.getElementById("page01").hidden = false;
-// });
-
+_qs('.btnTop').addEventListener('click' , $.documentElement.scrollTop = 0)
 console.log("Hello World :))");

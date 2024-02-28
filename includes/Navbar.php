@@ -56,8 +56,8 @@
     </button>
   </div>
 </nav> -->
-<nav>
-  <div class="relative z-10 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+<nav id="navbar" class="w-full z-full">
+  <div class="relative z-10 mx-auto w-full px-2 sm:px-6 lg:px-8 ">
     <div class="relative flex h-16 items-center justify-between">
 
 
@@ -88,7 +88,7 @@
 
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center me-6">
-        <a href="./home.php"><img class="h-10 w-auto" src="./images/NoteLegendary.png" alt="Your Company"></a>
+          <a href="./home.php"><img class="h-10 w-auto" src="./images/NoteLegendary.png" alt="Your Company"></a>
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
@@ -177,3 +177,8 @@
     </div>
   </div>
 </nav>
+<a href="#">
+  <div class="btnTop fixed z-full bottom-4 right-8 bg-indigo-800 text-white rounded-full py-2 px-3 animate-bounce hidden">
+    <i class="bi bi-caret-up-fill"></i>
+  </div>
+</a>

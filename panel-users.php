@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   if (isset($_GET['changestatus']) != null) {
 
     $id_update = get_id_header('changestatus');
-    $queryChangeStatus = "UPDATE `chats` SET `status`='1' WHERE id= $id_update";
+    $queryChangeStatus = "UPDATE `chats` SET `status`='1' WHERE id= '$id_update'";
 
     $resultChangeStatus = mysqli_query($conn, $queryChangeStatus);
 

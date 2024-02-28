@@ -14,6 +14,9 @@
     box-sizing: border-box;
     font-family: 'dana';
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     overflow-x: hidden !important;
@@ -58,4 +61,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+}
+
+.z-full{
+    z-index: 9999999999999999;
 }
