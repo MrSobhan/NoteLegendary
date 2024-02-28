@@ -7,8 +7,6 @@ $quryGetChats = "SELECT * FROM `chats`";
 
 $chats = mysqli_query($conn, $quryGetChats);
 
-// vd($chats['status']);
-
 $page_type = 'home';
 include_once("./includes/header.php");
 ?>
@@ -438,9 +436,9 @@ include_once("./includes/header.php");
             if (!$isLogin) {
             ?>
               <center>
-                <h1 class="text-primary fs-2">نظرات</h1>
-                <h4 class="fs-5 text-danger">ابتدا براي ثبت نظر بايد وارد شويد.</h4>
-                <button class="btn btn-primary btn-lg"><a href="http://localhost/php/Notes/login.php" class="text-light" style="text-decoration: none;"><i class="bi bi-person-fill"></i> ورود</a></button>
+                <h1 class="text-indigo-800 moraba text-5xl mb-8">نظرات</h1>
+                <h4 class="text-xl mb-2">ابتدا براي ثبت نظر بايد وارد شويد.</h4>
+                <button class="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 px-7 py-2.5 rounded-lg text-sm"><a href=<?= href('login.php')?> class="text-light" style="text-decoration: none;"><i class="bi bi-person-fill"></i> ورود</a></button>
               </center>
             <?php
             } else {
@@ -468,6 +466,8 @@ include_once("./includes/header.php");
         </div>
       </div>
     </section>
+
+    <!-- نظرات کاربران  -->
 
     <section class="mx-auto max-w-7xl px-6 lg:px-8">
       <h1 class="text-3xl text-indigo-900 my-12 moraba text__header relative max-w-max mx-auto z-1">نظرات کاربران</h1>
