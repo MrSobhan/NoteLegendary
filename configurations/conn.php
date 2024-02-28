@@ -136,3 +136,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+
+// ! ---------------------  Comments  --------------------------
+
+$quryGetChats = "SELECT * FROM `chats`";
+
+$chats = mysqli_query($conn, $quryGetChats);

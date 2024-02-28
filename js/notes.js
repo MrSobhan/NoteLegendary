@@ -1,24 +1,15 @@
-console.log("Js");
-
-_id("note-tab2").addEventListener("click", () => {
-  _id("note-page").hidden = false;
-  _id("love-page").hidden = true;
-  _id("now-page").hidden = true;
-});
-
-_id("love-tab2").addEventListener("click", () => {
-  _id("note-page").hidden = true;
-  _id("now-page").hidden = true;
-  _id("love-page").hidden = false;
-});
-
-_id("now-tab2").addEventListener("click", () => {
-  _id("note-page").hidden = true;
-  _id("now-page").hidden = false;
-  _id("love-page").hidden = true;
-});
-
-_id("btn-them").addEventListener("click", () => {
-  var ithem = _id("exampleColorInput").value;
-  $.documentElement.style.setProperty("--var-them", ithem);
+_qsA(".nav-link").forEach((element) => {
+  element.addEventListener("click", (btn) => {
+    
+    if(btn.target.className.includes('nav-link')){
+      let OverPage = btn.target.getAttribute("page")
+      _qsA('.content-note').forEach(e =>{
+        e.hidden = true
+      })
+      console.log(OverPage);
+      _qs('.active-link').classList.remove('active-link')
+      btn.target.parentElement.classList.add('active-link')
+      _id(OverPage).hidden = false
+    }
+  });
 });

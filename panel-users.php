@@ -160,7 +160,7 @@ include_once("./includes/header.php");
     <?php
     if ($TypeUser != 'user') {
     ?>
-    <h1 class="moraba  text-2xl text-indigo-800 my-10">به پنل مدیریت خوش آمدید <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand%20Light%20Skin%20Tone.png" class="w-auto h-8 inline" alt=""></h1>
+    <h1 class="moraba  text-2xl text-indigo-800 my-10">به پنل مدیریت خوش آمدید <img src="https://github.com/Tarikul-Islam-Anik/tarikul-islam-anik/raw/main/assets/images/Bar%20Chart.png" class="w-auto h-8 inline" alt=""></h1>
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50">
