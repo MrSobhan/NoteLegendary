@@ -125,7 +125,7 @@ include_once("./includes/header.php");
 
     <div class="container content-note mt-5" id="note-page">
       <center>
-        <div class="row g-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gx-4">
           <?php
           while ($note = $allNotes->fetch_assoc()) {
             noteCard($note, $ID);
@@ -147,7 +147,7 @@ include_once("./includes/header.php");
 
     <div class="container content-note mt-5" id="love-page" hidden>
       <center>
-        <div class="row g-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gx-4">
           <?php
           while ($note = $allNotes->fetch_assoc()) {
             if ($note['status'] == 'true') {
@@ -172,7 +172,7 @@ include_once("./includes/header.php");
     <div class="container content-note mt-5" id="now-page" hidden>
       <center>
 
-        <div class="row g-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gx-4">
           <?php
           while ($note = $allNotes->fetch_assoc()) {
             if (substr($note['updateAt'], 0, 10) == $Today) {

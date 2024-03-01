@@ -11,28 +11,28 @@
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php
-    function noteCard($note , $ID)
+    function noteCard($note, $ID)
     {
     ?>
-        <div class="col-lg-4">
-            <div class="card shadow" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title" style="color: var(--var-them);"><?= substr($note['title'], 0, 22) ?></h5>
-                    <p class="card-text"><?= substr($note['text'], 0, 100) ?>...</p>
-                    <a href="<?= href('notes.php?id=' . $ID . '&remove=' . $note['id']) ?>" class="btn btn-outline-danger">حذف</a>
-                    <a href="<?= href('notes-update.php?id=' . $note['id']) ?>" class="btn btn-outline-primary">ويرايش</a>
-                    <div class="div-card-h1"></div>
-                    <div class="row mt-4 align-items-center">
-                        <div class="col-6">
-                            <h6 style="font-family: 'Kdam Thmor Pro', sans-serif; font-size: 13px;"><?= $note['updateAt'] ?></h6>
-                        </div>
-                        <div class="col-6">
-                            <a href="<?= href('notes.php?id=' . $ID . '&heart=' . $note['id']) ?>"><button class="btn-heart"><i class="bi bi-heart-fill <?= $note['status'] == 'false' ? 'text-secondary-emphasis' : 'text-danger' ?>"></i></button></a>
-                        </div>
-                    </div>
+        <div class="max-w-sm mx-auto p-6 text-start bg-white rounded-lg shadow-lg mt-4 hover:scale-95 transition ease-in-out delay-150">
+            <div class="flex justify-between items-center">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-indigo-800"><?= substr($note['title'], 0, 22) ?></h5>
+                </a>
+                <div class="flex justify-between items-center">
+                    <a href=<?= href('notes-update.php?id=' . $note['id']) ?>><i class="bi bi-pencil-square text-indigo-600 cursor-pointer" title="ويرايش"></i></a>
+                    <a href=<?=  href('notes.php?id=' . $ID . '&remove=' . $note['id']) ?> ><i class="bi bi-eraser-fill text-red-600 cursor-pointer ms-2" title="حذف"></i></a>
+
+                    
                 </div>
             </div>
+            <p class="mb-3 font-normal"><?= substr($note['text'], 0, 150) ?>...</p>
+            <div class="flex justify-between items-center mt-4">
+                <a href="<?= href('notes.php?id=' . $ID . '&heart=' . $note['id']) ?>"><button><i class="bi bi-heart-fill <?= $note['status'] == 'false' ? 'text-indigo-800' : 'text-red-600' ?>"></i></button></a>
+                <p class="text-gray-500"><?= $note['updateAt'] ?></p>
+            </div>
         </div>
+
     <?php
     }
     ?>
