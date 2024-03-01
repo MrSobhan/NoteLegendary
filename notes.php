@@ -140,11 +140,7 @@ include_once("./includes/header.php");
       if ($countAllNotes['count'] != '0') {
         counterNotes($countAllNotes['count']);
       } else {
-      ?>
-        <div class="alert alert-danger" role="alert">
-          يادداشتي وجود ندارد.
-        </div>
-      <?php
+        alertNotNotes();
       }
       ?>
     </div>
@@ -168,11 +164,7 @@ include_once("./includes/header.php");
       if ($countLovePage != 0) {
         counterNotes($countLovePage);
       } else {
-      ?>
-        <div class="alert alert-danger" role="alert">
-          يادداشتي وجود ندارد.
-        </div>
-      <?php
+        alertNotNotes();
       }
       ?>
     </div>
@@ -198,11 +190,7 @@ include_once("./includes/header.php");
       if ($countNowPage != 0) {
         counterNotes($countNowPage);
       } else {
-      ?>
-        <div class="alert alert-primary" role="alert">
-          امروز يادداشتي نداشتيد.
-        </div>
-      <?php
+        alertNotNotes();
       }
       ?>
     </div>

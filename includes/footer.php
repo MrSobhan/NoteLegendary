@@ -1,4 +1,4 @@
-<div class="svg-class">
+<!-- <div class="svg-class">
     <svg width="100%" height="100px" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150 mt-10">
         <style>
             .path-0 {
@@ -91,7 +91,7 @@
         </style>
         <path d="M 0,400 L 0,275 C 86.3732057416268,278.22488038277515 172.7464114832536,281.44976076555025 264,277 C 355.2535885167464,272.55023923444975 451.38755980861254,260.4258373205742 548,260 C 644.6124401913875,259.5741626794258 741.7033492822967,270.8468899521531 845,284 C 948.2966507177033,297.1531100478469 1057.799043062201,312.1866028708134 1158,311 C 1258.200956937799,309.8133971291866 1349.1004784688994,292.4066985645933 1440,275 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#e0e7ff" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-2"></path>
     </svg>
-</div>
+</div> -->
 <footer class="bg-indigo-100">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
