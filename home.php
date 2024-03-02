@@ -11,29 +11,11 @@ include_once("./includes/header.php");
 
 <body>
 
-  <section id="page01">
+  <section>
 
     <?php include_once('./includes/Navbar.php'); ?>
 
     <!-- صفحه اصلی -->
-
-    <section class="hidden">
-      <div class="container-fluid sec-1" style="margin-top: 100px;margin-bottom:150px;">
-        <div class="row justify-content-center align-items-start">
-          <div class="col-lg-6">
-            <center>
-              <h1 id="app" class="text-primary">يادداشت آنلاين</h1>
-              <h3 class="mt-3 h5 text-muted">يادداشت هاي زيبا و محيطي امن با قابليت هاي فراوان!</h3>
-              <form action="" method="post"><button class="btn btn-lg btn-primary mt-5" name="go">بزن بريم!</button></form>
-              <div class="mt-4"><i class="bi bi-arrow-down-circle-fill fs-2 text-light d-lg-block d-none"></i></div>
-            </center>
-          </div>
-          <div class="col-lg-6">
-            <center><img src="https://raman01.ir/wp-content/uploads/2020/08/raman01.ir_-1.png" alt="" class="img-fluid"></center>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section>
       <div class="relative isolate px-6 pt-14 lg:px-8">
@@ -76,21 +58,6 @@ include_once("./includes/header.php");
     <!-- چی شد که ما امدیم؟-->
 
 
-
-    <section data-aos="flip-down" class="hidden">
-      <div class="container mt-5 mb-5" id="p1">
-        <div class="row justify-content-center align-items-center g-0">
-          <div class="col-lg-6 p-5" style="background: rgba(186, 226, 245, 0.432);">
-            <h3 class="text-primary"><i class="bi bi-card-checklist"></i> دفترچه ي يادداشت هوشمند</h3>
-            <h6 class="text-muted mt-4" style="line-height: 25px;">هميشه تو زندگيمون به اين موضوع بر خورديم كه مثلا به دليل مشغله هاي كاري در طول روز پيش مياد كه بخواهيم چيزي رو يادداشت كنيم و ممكنه در اون لحظه قلم كاغذي كه بتوانيم با آن بنويسيم نداشته باشيم . امروزه با پيشرفت روز افزون تكنولوژي در عرصه هاي مختلف همه ي ماها حداقل يك تلفن همراه را داريم كه با كمك آن كار هاي روز مره خود را انجام ميدهيم حال با كمك اين وبسايت به صورت كاملا رايگان و با داشتن تلفن هوشمند ديگر نيازي به استفاده از قلم و كاغذ نيست!</h6>
-          </div>
-          <div class="col-lg-6">
-            <img src="https://files.virgool.io/upload/users/298113/posts/alwxkye1k5vf/6airntzpplo0.jpeg" alt="" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section>
       <div class="overflow-hidden bg-white pt-24 sm:pt-32">
         <h1 class="text-3xl text-indigo-900 mb-10 moraba text__header relative max-w-max mx-auto z-1">چی شد که ما امدیم؟</h1>
@@ -98,37 +65,34 @@ include_once("./includes/header.php");
           <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div class="lg:pr-8 lg:pt-4">
               <div class="lg:max-w-lg">
-                <h2 class="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-                <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</p>
-                <p class="mt-6 text-lg leading-8 text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
+                <h2 class="text-base font-semibold leading-7 text-indigo-600">لحظه زیبای ماندگار</h2>
+                <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl moraba">ماجرای دفترچه یادداشت افسانه ای  ...</p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">این وبسایت یا بهتر بگوییم دفترچه یادداشت افسانه ای با هدف کمک به محیط زیست و همچنین طبیعتی ماندگاه با کاهش میزان استفاده از کاغذ طراحی و ایجاد شد تا ما بتوانیم شکرگزار ذره ای از لطف بیکران خداوند و زحمات شما مردمان عزیز و گران قدر باشیم.</p>
                 <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                   <div class="relative pl-9">
                     <dt class="inline font-semibold text-gray-900">
-                      <svg class="absolute left-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="absolute right-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clip-rule="evenodd" />
                       </svg>
-                      Push to deploy.
                     </dt>
-                    <dd class="inline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+                    <dd class="inline ms-10">کاهش میزان خسارات به محیط زیست</dd>
                   </div>
                   <div class="relative pl-9">
                     <dt class="inline font-semibold text-gray-900">
-                      <svg class="absolute left-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="absolute right-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
                       </svg>
-                      SSL certificates.
                     </dt>
-                    <dd class="inline">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.</dd>
+                    <dd class="inline ms-10">کاهش مصرف کاغذ و استفاده بی رویه از آن</dd>
                   </div>
                   <div class="relative pl-9">
                     <dt class="inline font-semibold text-gray-900">
-                      <svg class="absolute left-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="absolute right-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path d="M4.632 3.533A2 2 0 016.577 2h6.846a2 2 0 011.945 1.533l1.976 8.234A3.489 3.489 0 0016 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234z" />
                         <path fill-rule="evenodd" d="M4 13a2 2 0 100 4h12a2 2 0 100-4H4zm11.24 2a.75.75 0 01.75-.75H16a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75V15zm-2.25-.75a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75h-.01z" clip-rule="evenodd" />
                       </svg>
-                      Database backups.
                     </dt>
-                    <dd class="inline">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</dd>
+                    <dd class="inline ms-10">کاهش الودگی زیستی</dd>
                   </div>
                 </dl>
               </div>
@@ -141,89 +105,6 @@ include_once("./includes/header.php");
     </section>
 
     <!-- ویژگی ها  -->
-
-    <div data-aos="zoom-in" class="hidden">
-      <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-          <path d="M0.00,49.99 C263.82,205.76 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>
-        </svg></div>
-      <section>
-        <div class="container-fluid sec-card mt-4">
-          <center>
-            <div class="row g-4">
-              <div class="col-lg-4 mt-5">
-                <div class="card shadow card-sec1" style="width: 18rem;">
-                  <img src="https://techfars.com/wp-content/uploads/2022/12/tech-gh-pg.jpg" class="card-img-top" alt="...">
-                  <div class="card-body text center">
-                    <h5 class="card-title text-primary">اديتور هوشمند</h5>
-                    <p class="card-text text-muted">اين وبسايت با بهره گيري از تكنولوژي روز دنيا يك اديتور كامل و جذاب را براي نوشته هاي شما فراهم مي كند.</p>
-                    <div class="hr-card bg-primary"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 mt-5">
-                <div class="card shadow card-sec1" style="width: 18rem;">
-                  <img src="https://www.iraniancyber.com/wp-content/uploads/2022/01/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%A7%D8%B2-%D8%B5%D9%81%D8%B1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body text center">
-                    <h5 class="card-title text-primary">امنيت كامل</h5>
-                    <p class="card-text text-muted">در اينجا تمامي اطلاعات شما محفوظ است و نوشته هاي شما امنيتي كامل را در اختيار دارد.</p>
-                    <div class="hr-card bg-primary"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 mt-5">
-                <div class="card shadow card-sec1" style="width: 18rem;">
-                  <img src="https://files.virgool.io/upload/users/1462351/posts/wg9rklqv3xes/b24q1fcdupkd.png" class="card-img-top" alt="...">
-                  <div class="card-body text center">
-                    <h5 class="card-title text-primary">دسترسي راحت در لحظه</h5>
-                    <p class="card-text text-muted">در اين وبسايت شما دسترسي كامل رايگان در هر زمان و مكاني به نوشته هايتان داريد.</p>
-                    <div class="hr-card bg-primary"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </center>
-        </div>
-      </section>
-      <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-          <path d="M0.00,49.99 C191.59,193.92 271.49,-49.99 500.00,49.99 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: rgba(186, 226, 245, 0.432);"></path>
-        </svg></div>
-    </div>
-
-    <section data-aos="zoom-in-up" class="hidden">
-      <div class="container mt-5">
-        <center>
-          <div class="row g-4">
-            <div class="col-lg-4">
-
-              <div class="card shadow sec-card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center"><i class="bi bi-check2-square"></i> امنيت قوي</h5>
-                </div>
-              </div>
-
-            </div>
-            <div class="col-lg-4">
-
-              <div class="card shadow sec-card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center"><i class="bi bi-clipboard2-data"></i> دسترسي آسان</h5>
-                </div>
-              </div>
-
-            </div>
-            <div class="col-lg-4">
-
-              <div class="card shadow sec-card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title text-center"><i class="bi bi-alarm-fill"></i> نامحدود و رايگان</h5>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </center>
-      </div>
-    </section>
 
 
     <section>
@@ -288,66 +169,7 @@ include_once("./includes/header.php");
 
     </section>
 
-
-
-
-
     <!-- سوالات متداول  -->
-
-    <section data-aos="zoom-in-down" class="hidden">
-      <div class="container mt-5 p-5" id="p2">
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                هدف از خلق اين وبسايت چه بود؟
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-              <div class="accordion-body px-5">
-                ما توانستيم بعد از سال ها تلاش كوشش وبا تشخيص نياز برخي مردم يك وبسايتي را براي شما عزيزان به نمايش بگذاريم كه نيازي حقيقي شما را برطرف كند و بتواند راه كار خوبي براي استفاده نكردن از كاغذ و دسترسي راحت تر نسبت به آن باشد تا مردم بتوانند با خيال راحت تر و به صورت كاملا رايگان نوشته ها و يادداشت هاي خود را بنويسند و از اين وبسايت استفاده كنند.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                آيا نوشته هاي ما از امنيت كامل برخوردار است؟
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-              <div class="accordion-body px-5">
-                براي پاسخ به اين سوال بايد بگوييم بله! اين وبسايت با بهره گيري كامل و دقيق از تكنولوژي روز دنيا در صنعت برنامه نويسي توانسته اعتماد تعداد زيادي از كاربران خود را جلب كند و هدف اصلي يادداشت افسانه اي بالا بردن امنيت اطلاعات و يادداشت هاي كاربرانش بوده و خواهد بود همچنين در اين راستا تلاش هاي بسيار زيادي نموده .
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                اين وبسايت چه برتري نسبت به رقبا دارد؟
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-              <div class="accordion-body px-5">
-                اين وبسايت با وجود امنيت كامل طبق هدفش و همچنين دسترسي كامل و رايگان در تمامي ساعات شبانه روز و مجهز بودن به اديتور نوشته توانسته اعتماد بيشتر كاربرانش را جلب كند.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-heading">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse" aria-expanded="false" aria-controls="panelsStayOpen-collapse">
-                آيا امكان ارتباط با سازندگان سايت وجود دارد؟
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapse" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading">
-              <div class="accordion-body px-5">
-                شما در اين وبسايت با وجود امكانات زياد ميتوانيد پس از ورود در آن نظرات و مشكلات خود را با ما مطرح كنيد همچنين با وجود راه هاي ارتباطي نيز ميتوانيد با ما در ارتباط باشيد منتظر نظرات شما عزيزان هستيم!
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
 
@@ -398,8 +220,6 @@ include_once("./includes/header.php");
         </div>
       </div>
     </section>
-
-    
 
 
     <?php include_once('./includes/comments.php'); ?>
