@@ -48,8 +48,8 @@
             <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-3 py-1.5 rounded dark:bg-indigo-900 dark:text-indigo-300"><i class="bi bi-award-fill"></i> تعداد نوشته :<?= $count ?></span>
             <form action="" method="post">
                 <button name="delete-all">
-                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-3 py-1.5 rounded dark:bg-red-900 dark:text-red-300"><i class="bi bi-trash3-fill"></i> پاک کردن همه</span>
-            </button>
+                    <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-3 py-1.5 rounded dark:bg-red-900 dark:text-red-300"><i class="bi bi-trash3-fill"></i> پاک کردن همه</span>
+                </button>
             </form>
         </div>
     <?php

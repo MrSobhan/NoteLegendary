@@ -14,7 +14,7 @@
     function noteCard($note, $ID)
     {
     ?>
-        <div class="max-w-sm mx-auto p-6 text-start bg-white rounded-lg shadow-lg mt-4 hover:scale-95 transition ease-in-out delay-150">
+        <div class="max-w-sm mx-auto p-6 text-start bg-white rounded-lg shadow-lg mt-4 hover:scale-95 transition ease-in-out delay-150 overflow-hidden">
             <div class="flex justify-between items-center">
                 <a href="#">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-indigo-800"><?= substr($note['title'], 0, 22) ?></h5>
