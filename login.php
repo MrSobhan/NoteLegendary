@@ -19,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     set_session('id', $user['id']);
                     set_session('uname', $user['username']);
                     set_session('login', true);
-                    home();
+                    // home();
+                    Locatoin('notes.php?id=' . get_session('id'));
                 } else {
                     set_session('login', false);
                     alertErrorLogin();

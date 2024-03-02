@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 set_session('id', $ID);
                 set_session('uname', $name);
                 set_session('login', true);
-                home();
+                // home();
+                Locatoin('notes.php?id=' . get_session('id'));
             } else {
                 set_session('login', false);
                 alertErrorLogin();
