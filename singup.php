@@ -7,33 +7,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Regex
 
-        $emailRegex = "/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/gm" ;
-        $passRegex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/gm" ;
-        $numberRegex = "/(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/ig" ;
+        $emailRegex = "/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/i" ;
+        $passRegex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/i" ;
+        $numberRegex = "/(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/i" ;
 
         $email = preg_match($emailRegex , valid($_POST['email']));
-        $name = valid($_POST['num']);
         $pass = preg_match($passRegex, valid($_POST['password']));
         $number = preg_match($numberRegex, valid($_POST['phone']));
 
+        //Input User
+        $emailValue = valid($_POST['email']);
+        $nameValue = valid($_POST['num']);
+        $passValue = valid($_POST['password']);
+        $numberValue = valid($_POST['phone']);
+
         
 
-        if (!$name || !$email || !$pass || !$number) {
+        if (!$nameValue || !$email || !$pass || !$number) {
             alertErrorInput();
         } else {
 
             $ID = uniqid();
 
-            $passHash = pas_hash($pass);
+            $passHash = pas_hash($passValue);
 
-            $querySetUser = "INSERT INTO `users` (id , username ,email ,phonenumber , password) values('{$ID}', '{$name}','{$email}' ,'{$number}' , '{$passHash}')";
+            $querySetUser = "INSERT INTO `users` (id , username ,email ,phonenumber , password) values('{$ID}', '{$nameValue}','{$emailValue}' ,'{$numberValue}' , '{$passHash}')";
 
             $com = mysqli_query($conn, $querySetUser);
 
 
             if ($com) {
                 set_session('id', $ID);
-                set_session('uname', $name);
+                set_session('uname', $nameValue);
                 set_session('login', true);
                 Locatoin('notes.php?id=' . get_session('id'));
             } else {
