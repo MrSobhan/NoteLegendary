@@ -184,8 +184,7 @@ include_once("./includes/header.php");
         </h2>
         <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
           <div class="w-full p-5 font-medium rtl:text-right text-indigo-800 border border-indigo-200 shadow-md rounded-xl mb-3">
-            <p class="mb-2 text-indigo-500">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-            <p class="text-gray-500">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+            <p class="mb-2 text-indigo-500">این وبسایت یا بهتر بگوییم دفترچه یادداشت افسانه ای با هدف کمک به محیط زیست و همچنین طبیعتی ماندگاه با کاهش میزان استفاده از کاغذ طراحی و ایجاد شد تا ما بتوانیم شکرگزار ذره ای از لطف بیکران خداوند و زحمات شما مردمان عزیز و گران قدر باشیم.</p>
           </div>
         </div>
         <h2 id="accordion-collapse-heading-2">
@@ -198,8 +197,7 @@ include_once("./includes/header.php");
         </h2>
         <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
           <div class="w-full p-5 font-medium rtl:text-right text-indigo-800 border border-indigo-200 shadow-md rounded-xl mb-3">
-            <p class="mb-2 text-indigo-500">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-            <p class="text-gray-500">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+            <p class="mb-2 text-indigo-500">شما می توانید به راحتی و در کمترین زمان ممکن و فقط با اتصال به اینترنت و عضویت در وبسایت ما از تمامی خدمات بهره مند شوید.</p>
           </div>
         </div>
         <h2 id="accordion-collapse-heading-3">
@@ -212,8 +210,7 @@ include_once("./includes/header.php");
         </h2>
         <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
           <div class="w-full p-5 font-medium rtl:text-right text-indigo-800 border border-indigo-200 shadow-md rounded-xl mb-3">
-            <p class="mb-2 text-indigo-500">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-            <p class="text-gray-500">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+            <p class="mb-2 text-indigo-500">ما سعی کردیم در نسخه جدید با ارائه وبسایت زیبا تر با امنیت بیشتر و همچنین کاربردی همه روزه خدمت گذار شما عزیزان باشیم.</p>
           </div>
         </div>
       </div>
