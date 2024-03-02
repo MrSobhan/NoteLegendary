@@ -4,11 +4,19 @@ require_once("./configurations/conn.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['submit'])) {
-        $email = valid($_POST['email']);
-        $name = valid($_POST['num']);
-        $pass = valid($_POST['password']);
-        $number = valid($_POST['phone']);
 
+        // Regex
+
+        $emailRegex = "/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/gm" ;
+        $passRegex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/gm" ;
+        $numberRegex = "/(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/ig" ;
+
+        $email = preg_match($emailRegex , valid($_POST['email']));
+        $name = valid($_POST['num']);
+        $pass = preg_match($passRegex, valid($_POST['password']));
+        $number = preg_match($numberRegex, valid($_POST['phone']));
+
+        
 
         if (!$name || !$email || !$pass || !$number) {
             alertErrorInput();
@@ -22,15 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $com = mysqli_query($conn, $querySetUser);
 
-            // $quryGetUser = "SELECT * FROM users";
-
-            // $result = mysqli_query($conn, $quryGetUser);
 
             if ($com) {
                 set_session('id', $ID);
                 set_session('uname', $name);
                 set_session('login', true);
-                // home();
                 Locatoin('notes.php?id=' . get_session('id'));
             } else {
                 set_session('login', false);
