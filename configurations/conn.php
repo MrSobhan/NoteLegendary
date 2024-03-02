@@ -101,6 +101,7 @@ function get_id_header($id)
 
 $isLogin = isset($_SESSION['login']) && $_SESSION['login'] && get_session('id');
 
+// vd($isLogin);
 
 if (isset($_POST['goNotes'])) {
     if ($isLogin) {

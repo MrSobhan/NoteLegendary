@@ -7,24 +7,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email2 = valid($_POST['email']);
         $password2 = valid($_POST['password']);
 
-        $queryGetUsers = "SELECT * FROM users";
 
-        $allUsers = mysqli_query($conn, $queryGetUsers);
 
 
         if ($email2  && $password2) {
-            while ($user = $allUsers->fetch_assoc()) {
-                if ($email2 == $user['email'] && password_verify($password2, $user["password"])) {
 
-                    set_session('id', $user['id']);
-                    set_session('uname', $user['username']);
-                    set_session('login', true);
-                    // home();
-                    Locatoin('notes.php?id=' . get_session('id'));
-                } else {
-                    set_session('login', false);
-                    alertErrorLogin();
-                }
+            $queryGetUsers = "SELECT * FROM users WHERE `email` = '$email2'";
+
+            $users = mysqli_query($conn, $queryGetUsers)->fetch_assoc();
+
+            if (password_verify($password2, $users['password'])) {
+
+                set_session('id', $users['id']);
+                set_session('uname', $users['username']);
+                set_session('login', true);
+                Locatoin('notes.php?id=' . get_session('id'));
+
+            } else {
+                set_session('login', false);
+                alertErrorLogin();
             }
         } else {
             alertErrorInput();

@@ -26,7 +26,7 @@ if ($ID) {
   }
 
 
-  $queryGetCount = "SELECT COUNT(*) as `count` FROM note";
+  $queryGetCount = "SELECT COUNT(*) as `count` FROM note WHERE `uid` = '$ID'";
 
   $countAllNotes = mysqli_query($conn, $queryGetCount)->fetch_assoc();
 }
