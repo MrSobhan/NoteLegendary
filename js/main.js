@@ -7,7 +7,11 @@ _qsA = (qsA) => $.querySelectorAll(qsA);
 //     event.preventDefault()
 // })
 
-// $.addEventListener("load", () => {
+setTimeout(() => {
+  _qs('.loader__Page').hidden = true
+}, 5700);
+
+
 if (_qs("#editor")) {
   ClassicEditor.create(_qs("#editor")).catch((error) => {
     console.error(error);
@@ -62,4 +66,3 @@ $.addEventListener("scroll", () => {
 // _qs(".btnTop").addEventListener("click", ($.documentElement.scrollTop = 0));
 
 console.log("Hello World :))");
-// });

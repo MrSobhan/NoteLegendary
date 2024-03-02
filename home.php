@@ -10,16 +10,6 @@ include_once("./includes/header.php");
 
 
 <body>
-  <section id="page00" hidden>
-    <div class="all">
-      <div class="div1 for"></div>
-      <div class="div2 for"></div>
-      <div class="div2 for"></div>
-      <div class="div2 for"></div>
-    </div>
-  </section>
-
-
 
   <section id="page01">
 

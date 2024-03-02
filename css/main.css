@@ -67,6 +67,33 @@ body {
     z-index: 1;
 }
 
+.loader__Page>div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--indigo-800);
+    animation: loader 3s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: translateX(0px);
+        width: 30px;
+    }
+
+    50% {
+        width: 350px;
+    }
+
+    100% {
+        transform: translateX(1400px);
+        width: 3px;
+    }
+}
+
 .z-full {
     z-index: 9999999999999999;
 }
@@ -143,6 +170,6 @@ body {
 
 /* Footer  */
 
-.svg-class{
+.svg-class {
     transform: scalex(5);
 }
