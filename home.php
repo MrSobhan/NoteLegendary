@@ -2,7 +2,6 @@
 
 require_once("./configurations/conn.php");
 
-
 $page_type = 'home';
 include_once("./includes/header.php");
 ?>
