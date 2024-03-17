@@ -6,7 +6,6 @@ include_once("./includes/header.php");
 ?>
 
 <body>
-
   <section>
 
     <?php include_once('./includes/Navbar.php'); ?>
@@ -149,11 +148,11 @@ include_once("./includes/header.php");
               <div class="relative pr-16">
                 <dt class="text-base font-semibold leading-7 text-gray-900">
                   <div class="absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <i class="bi bi-pen text-xl text-white mt-2"></i>
+                    <i class="bi bi-pen text-xl text-white mt-2"></i>
                   </div>
                   <p class="text-indigo-800">ادیتوری هوشمند با قابلیت های فراوان</p>
                 </dt>
-                <dd class="mt-2 text-base dana leading-7 text-gray-600">این وبسایت با بهره گیری از یک ادیتوری هوشمند و کامل توانسته تا حد زیادی نیاز شما عزیزان را بر طرف کند و باعث سهولت استفاده  شما شود.</dd>
+                <dd class="mt-2 text-base dana leading-7 text-gray-600">این وبسایت با بهره گیری از یک ادیتوری هوشمند و کامل توانسته تا حد زیادی نیاز شما عزیزان را بر طرف کند و باعث سهولت استفاده شما شود.</dd>
               </div>
 
             </dl>
