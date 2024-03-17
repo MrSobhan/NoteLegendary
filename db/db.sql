@@ -33,3 +33,4 @@ CREATE TABLE IF NOT EXISTS `chats` (
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET `utf8` DEFAULT COLLATE `utf8_persian_ci`;
 
+
