@@ -4,7 +4,7 @@ An attractive web app and fast notepad that is always with you with a complete e
 
 - 🔭 I’m currently working on [NoteLegendery](https://github.com/MrSobhan/NoteLegendery) <img width="20" src="https://github.com/Tarikul-Islam-Anik/tarikul-islam-anik/raw/main/assets/images/Flexed%20Biceps%20Light%20Skin%20Tone.png"/>
 
-<img src="https://s30.picofile.com/file/8473841434/Screenshot_2024_03_26_170216.jpg" style="border-radius: 15px;" title="NoteLegendary">
+<img src="https://s30.picofile.com/file/8473841434/Screenshot_2024_03_26_170216.jpg" style="border-radius:15px;" title="NoteLegendary">
 <img src="https://s31.picofile.com/file/8473841442/Screenshot_2024_03_26_170238.jpg" title="NoteLegendary">
 <img src="https://s31.picofile.com/file/8473841468/Screenshot_2024_03_26_170257.jpg" title="NoteLegendary">
 
