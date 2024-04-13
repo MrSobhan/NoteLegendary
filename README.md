@@ -1,6 +1,6 @@
 <h1 align="left">Hello There<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand%20Light%20Skin%20Tone.png" alt="Waving Hand Light Skin Tone" width="35" height="35"/></h1>
 
-An attractive web app and fast notepad that is always with you with a complete editor with JavaScript and high security for users  😎
+An attractive web app and fast notepad that is always with you with a complete editor with JavaScript and high security for users  😎💚
 
 - 🔭 I’m currently working on [NoteLegendery](https://github.com/MrSobhan/NoteLegendery) <img width="20" src="https://github.com/Tarikul-Islam-Anik/tarikul-islam-anik/raw/main/assets/images/Flexed%20Biceps%20Light%20Skin%20Tone.png"/>
 
