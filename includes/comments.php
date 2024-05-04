@@ -15,7 +15,7 @@
                     <center>
                         <h1 class="text-indigo-800 moraba text-5xl mb-8 hidden">نظرات</h1>
                         <img class="mx-auto h-40 w-auto" src="./images/NoteLegendary.png" alt="Your Company">
-                        <h4 class="text-xl my-4">ابتدا براي ثبت نظر بايد وارد شويد.</h4>
+                        <p class="text-xl my-4">ابتدا براي ثبت نظر بايد وارد شويد.</p>
                         <button class="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 px-7 py-2.5 rounded-lg text-sm"><a href=<?= href('login.php') ?> class="text-light" style="text-decoration: none;"><i class="bi bi-person-fill"></i> ورود</a></button>
                     </center>
                 <?php
