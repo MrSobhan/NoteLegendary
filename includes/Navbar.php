@@ -33,7 +33,7 @@
 
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center me-6">
-          <a href="./home.php"><img class="h-10 w-auto" src="./images/NoteLegendary.png" alt="Your Company"></a>
+          <a href="./home.php"><img class="h-10 w-auto mr-6" src="./images/NoteLegendary.png" alt="Your Company"></a>
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">

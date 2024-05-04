@@ -1,0 +1,15 @@
+{
+    "name": "Notelegendary",
+    "short_name": "Notelegendary",
+    "start_url": "https://notelegendary.liara.run/",
+    "display": "standalone",
+    "background_color": "#3730a3",
+    "description": "یک دفترچه یادداشت هوشمند و کاربردی و رایگان برای همه با سرعت بالا و نامحدود در هر لحظه و هر جا !",
+    "icons": [
+        {
+            "src": "https://notelegendary.liara.run/images/NoteLegendary.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        }
+    ]
+}
