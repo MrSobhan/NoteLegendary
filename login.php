@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $users = mysqli_query($conn, $queryGetUsers)->fetch_assoc();
 
+
             if ($users && password_verify($password2, $users['password'])) {
 
                 set_session('id', $users['id']);

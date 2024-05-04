@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `notes` DEFAULT CHARACTER SET `utf8` DEFAULT COLLATE `utf8_persian_ci`;
-USE `notes`;
+CREATE DATABASE IF NOT EXISTS `optimistic_khayyam` DEFAULT CHARACTER SET `utf8` DEFAULT COLLATE `utf8_persian_ci`;
+USE `optimistic_khayyam`;
 
 CREATE TABLE IF NOT EXISTS `users` (
     `id` VARCHAR(255) NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `users` (
     `email` VARCHAR(255) NOT NULL,
     `phonenumber` VARCHAR(15) NULL,
     `password` VARCHAR(255) NULL,
-    `type` TINYTEXT DEFAULT 'user',
+    `type` TINYTEXT,
     `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET `utf8` DEFAULT COLLATE `utf8_persian_ci`;

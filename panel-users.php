@@ -158,7 +158,7 @@ include_once("./includes/header.php");
 
   <section class="mx-auto max-w-7xl px-6 lg:px-8 mb-20">
     <?php
-    if ($TypeUser != 'user') {
+    if ($TypeUser == 'admin') {
     ?>
     <h1 class="moraba  text-2xl text-indigo-800 my-10">به پنل مدیریت خوش آمدید <img src="https://github.com/Tarikul-Islam-Anik/tarikul-islam-anik/raw/main/assets/images/Bar%20Chart.png" class="w-auto h-8 inline" alt=""></h1>
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">

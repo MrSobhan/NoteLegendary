@@ -1,0 +1,1 @@
+<?php header("Location:https://notelegendary.liara.run/home.php");?>

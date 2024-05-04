@@ -6,27 +6,18 @@
 // $conn = mysqli_connect( $hostname , $username , $password ); // For Host
 
 include_once("./includes/alertCom.php");
-// include_once("router.php");
-// $title_header = null;
-// $url_title = null;
-// if($url_title == 'home'){
-//     $title_header = 'Legendary Notes';
-// }elseif ($url_title == 'notes') {
-//     $title_header = 'Hello /' . get_session('uname');
-// }
-// echo "loded...";
 
 $page_type =  'home';
 
-$conn = mysqli_connect("localhost", "root", null);
+$conn = mysqli_connect("notes", "root", "DttLDVdKudxdzsVKp2x8frtI");
 if ($conn) {
     $conn->set_charset("utf8");
-    $DOCROOT = $_SERVER['DOCUMENT_ROOT'];
-    mysqli_multi_query($conn, file_get_contents("$DOCROOT/php/NoteLegendary/db/db.sql"));
+    $DOCROOT = "https://notelegendary.liara.run";
+    mysqli_multi_query($conn, file_get_contents("$DOCROOT/db/db.sql"));
     while (mysqli_next_result($conn));
-} else {
-    exit;
 }
+
+
 
 session_start();
 
@@ -41,7 +32,7 @@ $Today = $getTime['year'] . '-' . $month_Number . '-' . $day_Number;
 
 //Helper Func
 
-$rootHeaderUrl = 'http://localhost/php/NoteLegendary/';
+$rootHeaderUrl = 'https://notelegendary.liara.run/';
 
 function Locatoin($url)
 {

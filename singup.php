@@ -7,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Regex
 
-        $emailRegex = "/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/i" ;
-        $passRegex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/i" ;
-        $numberRegex = "/(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/i" ;
+        $emailRegex = "/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/i";
+        $passRegex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/i";
+        $numberRegex = "/(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/i";
 
-        $email = preg_match($emailRegex , valid($_POST['email']));
+        $email = preg_match($emailRegex, valid($_POST['email']));
         $pass = preg_match($passRegex, valid($_POST['password']));
         $number = preg_match($numberRegex, valid($_POST['phone']));
 
@@ -21,20 +21,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passValue = valid($_POST['password']);
         $numberValue = valid($_POST['phone']);
 
-        
 
-        if (!$nameValue || !$email || !$pass || !$number) {
-            alertErrorInput();
-        } else {
+        if ($nameValue != '' && $email != '' && $pass != '' && $number != '') {
 
             $ID = uniqid();
 
             $passHash = pas_hash($passValue);
 
-            $querySetUser = "INSERT INTO `users` (id , username ,email ,phonenumber , password) values('{$ID}', '{$nameValue}','{$emailValue}' ,'{$numberValue}' , '{$passHash}')";
+            $querySetUser = "INSERT INTO `users` (id , username ,email ,phonenumber , type , password) values('{$ID}', '{$nameValue}','{$emailValue}' ,'{$numberValue}' , 'user' , '{$passHash}')";
 
             $com = mysqli_query($conn, $querySetUser);
 
+            echo $com;
 
             if ($com) {
                 set_session('id', $ID);
@@ -45,6 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 set_session('login', false);
                 alertErrorLogin();
             }
+        } else {
+            alertErrorInput();
         }
     }
 }
