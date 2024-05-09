@@ -2,7 +2,7 @@
 
 An attractive web app and fast notepad that is always with you with a complete editor with JavaScript and high security for users  😎💚
 
-[NoteLegendery Online](https://notelegendary.liara.run/) 💯
+[NoteLegendery Online](https://notelegendary.liara.run/) 💯 💫
 
 - 🔭 I’m currently working on [NoteLegendery](https://github.com/MrSobhan/NoteLegendery) <img width="20" src="https://github.com/Tarikul-Islam-Anik/tarikul-islam-anik/raw/main/assets/images/Flexed%20Biceps%20Light%20Skin%20Tone.png"/>
 
