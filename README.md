@@ -1,6 +1,6 @@
 <h1>Hey There <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand%20Light%20Skin%20Tone.png" alt="Waving Hand Light Skin Tone" width="35" height="35"/> Im Mr.Legend <img src="https://github.com/Tarikul-Islam-Anik/tarikul-islam-anik/raw/main/assets/images/Fire.png" alt="Slightly Smiling Face" width="35" height="35"/></h1>
 
-An attractive web app and fast notepad that is always with you with a complete editor with JavaScript and high security for users  😎💚
+An attractive web app and fast notepad that is always with you with a complete editor with JavaScript and high security for users 💚
 
 [NoteLegendery Online](https://notelegendary.liara.run/) 💯 💫 ❤️
 
